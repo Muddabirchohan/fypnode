@@ -30,3 +30,41 @@
     transform: rotate(360deg);
   }
 }
+
+.dot {
+  height: 160px;
+  width: 180px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.categories{
+  text-align: center;
+  color: orangered;
+  font-size: 35px;
+}
+
+.categories-bg{
+  background-color: #282c34
+}
+
+.icons{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.cardAllign{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 120px;
+}
+
+/* .icons{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
