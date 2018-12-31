@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -68,3 +66,99 @@ justify-content: center;
   margin-left: auto;
   margin-right: auto;
 } */
+
+
+
+
+
+.login{
+
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  padding-left: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+
+.login-bg{
+  padding-top: 50px;
+  padding-bottom: 130px;
+  background-image: url("./assets/download.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.login h1{
+  color: white;
+}
+
+@media (min-width:320px ) and (max-width: 767px) {
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.cardAllign{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-left: 0px;
+}
+
+.login-bg{
+  padding-top: 50px;
+  padding-bottom: 130px;
+  background-image: url("./assets/download.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login{
+
+  color: white;
+  margin-top: 50px;
+  padding-left: 0px;
+  padding: 10px;
+  width: 320px;
+
+}
+
+
+}
+
+
+
+
+
+
+@media (min-width:768px ) and (max-width: 991px) {
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+}
+
+
+
+@media (min-width:992px ) and (max-width: 1200px) {
+
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  
+    
+  }

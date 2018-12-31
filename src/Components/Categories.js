@@ -19,15 +19,15 @@ export default class Categories extends Component {
         <Grid>
   <Row className="show-grid">
     
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12} sm={4} md={4} lg={2}>
       <span> 
-      <div style={{ borderRadius: '50%',paddingLeft: '25px',paddingTop: '10px'}}>
+      <div style={{ borderRadius: '50%',paddingLeft: '25px'}}>
       <img src={watch} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>
       </div>
       </span> 
     </Col>
 
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12} sm={4} md={4} lg={2}>
     <span >
     <div style={{paddingLeft: '25px',paddingTop: '10px'}}>
       <img src={jacket} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>
@@ -36,7 +36,7 @@ export default class Categories extends Component {
     </Col>
 
 
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12} sm={4} md={4} lg={2}>
     <span >
     <div style={{paddingLeft: '25px',paddingTop: '10px'}}>
       <img src={bulb} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>
@@ -45,7 +45,7 @@ export default class Categories extends Component {
     </Col>
 
 
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12} sm={4} md={4} lg={2}>
     <span >
     <div style={{paddingLeft: '25px',paddingTop: '10px'}}>
       <img src={perfume} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>
@@ -55,7 +55,7 @@ export default class Categories extends Component {
 
 
 
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12} sm={4} md={4} lg={2}>
     <span>
     <div style={{paddingLeft: '25px',paddingTop: '10px'}}>
       <img src={nailpolish} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>
@@ -65,7 +65,7 @@ export default class Categories extends Component {
 
 
 
-    <Col xs={12} md={8} lg={2}>
+    <Col xs={12}  sm={4} md={4} lg={2}>
      <span >
     <div style={{paddingLeft: '25px',paddingTop: '10px'}}>
       <img src={shoe} alt="wrist watch" height="140" width="140" style={{borderRadius: '50%'}}/>

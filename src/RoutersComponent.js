@@ -7,6 +7,13 @@ import VrAr from './Components/VrAr';
 import Ecommerce from './Components/Ecommerce';
 import InternetOfThings from './Components/InternetOfThings';
 import ArtficialIntelligence from './Components/ArtificialIntelligence';
+import sellerLogin from './Components/sellerLogin';
+import sellerSignup from './Components/sellerSignup';
+import customerLogin from './Components/customerLogin';
+import customerSignup from './Components/customerSignup';
+import sellerProfile from './Components/sellerProfile';
+import customerProfile from './Components/customerProfile';
+import ProductDescription from './Components/ProductDescription';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -21,9 +28,13 @@ export default class RoutersComponent extends Component {
         <Route  path="/ecommerce" component={Ecommerce}/>  
         <Route  path="/internetofthings" component={InternetOfThings}/>  
         <Route  path="/artificialintelligence" component={ArtficialIntelligence}/>  
-        
-        
-              
+        <Route path="/sellerLogin" component={sellerLogin}/> 
+        <Route path="/sellerSighnup" component={sellerSignup}/> 
+        <Route path="/customerSignup" component={customerSignup}/> 
+        <Route path="/customerLogin" component={customerLogin}/> 
+        <Route path="/sellerProfile/:id" component={sellerProfile}/> 
+        <Route path="/customerProfile/:id" component={customerProfile}/> 
+        <Route path="/productDescription/:myid" component={ProductDescription}/> 
         </Switch>
         </BrowserRouter>
       </div>

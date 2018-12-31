@@ -5,16 +5,19 @@ import Slider from './Components/Slider';
 import Categories from './Components/Categories';
 import CategoriesList from './Components/CategoriesList';
 import Products from './Components/Products';
+import Header2 from './Components/Header2';
+
 
 class App extends Component {
   render() {
     return (
       <div>
-         <Header/>
+         {/* <Header/> */}
+         <Header2/>
          <Slider/>
          <CategoriesList/>
          <br/><br/>
-         <Categories/>
+         {/* <Categories/> */}
          <Products/>
       </div>
     );

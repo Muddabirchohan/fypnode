@@ -6,10 +6,83 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* heaeer styling */
+.StyleHead{
+  display: flex;
+  background-color:whitesmoke;
+  flex-direction: column;
+  height: 5em;
+  
+  overflow: hidden;
+ 
+}
+.icon{
+  display: none;
+}
 
+
+.input-group{
+  width: 60%;
+}
+.input-group-append{
+  height: 2.4em;
+}
+.UpperHeader{
+  display: flex;
+    
+    
+    height: 2em;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right:1.9em;
+}
+.UpperHeader >  p {
+  margin-top: 0.1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+}
+
+.LowerHeader{
+  height: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn-outline-primary{
+  height: 2.4rem;
+}
+.BrandName{
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.8em;
+}
+.StyleHead .LowerHeader >div:nth-child(1){
+  font-size: 1.5em;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+ 
+ 
+  .StyleHead > .UpperHeader{
+    display: none;
+  }
+  .StyleHead .LowerHeader >div:nth-child(5), .StyleHead .LowerHeader >div:nth-child(2),.StyleHead .LowerHeader >div:nth-child(4)
+  {
+    display: none;
+  }
+  .StyleHead .LowerHeader >div:nth-child(1){
+    font-size: 2.5em;
+    display: flex;
+  }
+  .input-group{
+    width: 90%;
+  }
+  
+}

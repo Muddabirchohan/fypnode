@@ -16,7 +16,7 @@ export default class CategoriesList extends Component {
     
   
 
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="/mobileapp"> 
     <Card >
       <CardActionArea>
@@ -42,7 +42,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="webapp"> 
     <Card>
       <CardActionArea>
@@ -69,7 +69,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="vrar"> 
     <Card >
       <CardActionArea>
@@ -82,7 +82,7 @@ export default class CategoriesList extends Component {
        
         <div className="icons">
         <i class="fas fa-vr-cardboard"></i>
-        <p> Virtual & Augmented Reality</p> 
+        <p> VR/AR </p> 
         </div>
         </CardContent>
       </CardActionArea>
@@ -102,7 +102,7 @@ export default class CategoriesList extends Component {
     
   
 
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="artificialintelligence"> 
     <Card >
       <CardActionArea>
@@ -115,7 +115,7 @@ export default class CategoriesList extends Component {
        
         <div className="icons">
         <i class="fas fa-brain"></i>
-        <p> Artificial Intelligence</p> 
+        <p> AI</p> 
         </div>
         </CardContent>
       </CardActionArea>
@@ -128,7 +128,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="ecommerce"> 
     <Card >
       <CardActionArea>
@@ -153,9 +153,7 @@ export default class CategoriesList extends Component {
     </Link>
     </Col>
 
-
-
-    <Col xs={4} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={4}>
     <Link to="internetofthings"> 
     <Card >
       <CardActionArea>
@@ -167,19 +165,17 @@ export default class CategoriesList extends Component {
         <CardContent>
         <div className="icons">
         <i class="fas fa-code-branch"></i>
-        <p> Internet Of Things </p> 
+        <p> IOT </p> 
         </div>
         </CardContent>
       </CardActionArea>
       <CardActions>
-    
       </CardActions>
     </Card>
     </Link>
     </Col>
   </Row>
   </Grid>
-
       </div>
     )
   }
