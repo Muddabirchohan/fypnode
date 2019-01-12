@@ -23,7 +23,7 @@ constructor(){
 
 componentDidMount() {
 
-    axios.get("http://localhost:7000/seller/getseller")
+    axios.get("http://localhost:7000/sellers/getsellers")
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
@@ -44,7 +44,7 @@ componentDidMount() {
       if (obj.email === this.state.email && obj.pass === this.state.password) {
         this.setState({ change: !this.state.change })
         flg = false
-        this.props.history.push('/');
+        alert("successfull");
       }
       else if (flg == true) {
         alert('user not found ');

@@ -4,6 +4,8 @@ import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button}
 import profile from '../../src/assets/profile.jpg';
 import {Grid,Row,Col} from 'react-bootstrap';
 import productdescription from '../../src/assets/productdescription.jpg';
+import Header2 from './Header2';
+import '../App.css';
 export default class ProductDescription extends Component {
     constructor(){
         super();
@@ -24,6 +26,7 @@ export default class ProductDescription extends Component {
         const {products} = this.state;
         return(
             <div>
+                <Header2/>
                <Grid>
   <Row>
 
@@ -47,14 +50,16 @@ export default class ProductDescription extends Component {
               <div className="icons">
             
             <p> name    :   {products.pname} </p> 
-            <p> Address :   {products.category} </p> 
-            <p> Email   :   {products.cost} </p> 
-            <p> Contact :   {products.hostUrl} </p> 
-            <p> video   :   {products.demoVideoUrl}</p>
+            <p> category :   {products.category} </p> 
+            <p> cost   :   {products.cost} </p> 
+            <p> demovideo   :   {products.demoVideoUrl}</p>
             <p> description   :   {products.pdescription}</p>
             <p> exeurl   :   {products.exeUrl}</p>
             
-            
+            <div className="centerCart"> 
+            <br/><br/>
+    <Button variant="contained" color="success"> Add To Cart </Button>
+</div>
             </div>
         </CardContent>
       </CardActionArea>
@@ -64,6 +69,8 @@ export default class ProductDescription extends Component {
     </Col>
     </Row>
 </Grid>
+
+
             </div> 
         )
     }

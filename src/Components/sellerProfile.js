@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
 import {Grid,Row,Col} from 'react-bootstrap';
 import profile from '../../src/assets/profile.jpg';
+import Header2 from './Header2';
  class sellerProfile extends Component{
 
     constructor(){
@@ -26,6 +27,7 @@ render(){
     const {sellerProfile} = this.state;
     return(
         <div>
+            <Header2/>
        <Grid>
   <Row>
 

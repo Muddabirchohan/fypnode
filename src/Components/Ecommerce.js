@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
+import Header2 from './Header2';
 
 export default class InternetOfThings extends Component {
   constructor(){
@@ -25,6 +26,7 @@ axios.get(`http://localhost:7000/products/ecommerce`)
   render() {
     return (
   <div>
+    <Header2/>
       <h1 style={{textAlign: 'center'}}> Ecommerce </h1>
   
         <div className="cardAllign">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
+import Header2 from './Header2';
 
 export default class MobileApp extends Component {
   constructor(){
@@ -26,7 +27,7 @@ axios.get(`http://localhost:7000/products/androidproducts`)
     return (
 
       <div>
-
+      <Header2/>
            <h1 style={{textAlign: 'center'}}> Mobile App</h1>
       <div className="cardAllign">
            {this.state.androidproducts.map((obj)=>{

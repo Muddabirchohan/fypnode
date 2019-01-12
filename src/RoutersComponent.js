@@ -14,6 +14,7 @@ import customerSignup from './Components/customerSignup';
 import sellerProfile from './Components/sellerProfile';
 import customerProfile from './Components/customerProfile';
 import ProductDescription from './Components/ProductDescription';
+import Cart from './Components/Cart';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -35,6 +36,8 @@ export default class RoutersComponent extends Component {
         <Route path="/sellerProfile/:id" component={sellerProfile}/> 
         <Route path="/customerProfile/:id" component={customerProfile}/> 
         <Route path="/productDescription/:myid" component={ProductDescription}/> 
+        <Route path="/cart" component={Cart}/> 
+        
         </Switch>
         </BrowserRouter>
       </div>

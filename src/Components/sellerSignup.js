@@ -51,7 +51,6 @@ componentWillMount() {
         console.log(res.data);
       });
 
-
       if(this.state.name === "" && this.state.email === "" && this.state.contact === "" && this.state.address === "" && this.state.password === "" ){
           alert('fields missing')
       }
@@ -67,7 +66,7 @@ componentWillMount() {
     }
 
     getName(e){
-        this.setState({ name: e.target.value})
+        this.setState({ sname: e.target.value})
     }
 
     getContact(e){
@@ -146,7 +145,7 @@ componentWillMount() {
 
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button  bsStyle="success" type="submit" onClick={this.Postdata.bind(this)}>Sign in</Button>
+                            <Button  bsStyle="success" type="submit">Sign in</Button>
                         </Col>
                     </FormGroup>
                     <Link to="/sellerLogin"> already have an account? login  </Link>
