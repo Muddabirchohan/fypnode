@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import {Carousel,Grid,Row,Col} from 'react-bootstrap';
-import img1 from './../assets/img1.jpg';
-import img2 from './../assets/img2.jpg';
-import img3 from './../assets/img3.jpg';
-import img4 from './../assets/img4.png';
-import img5 from './../assets/img5.jpg';
-
-import download from './../assets/download.jpg';
 import '../App.css';
-import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core'
 
 
 export default class Slider extends Component {

@@ -189,13 +189,13 @@ img{
   .bg-img,.bg-img2{
     height: 450px;
     width: 100%;
-  
+    background-color: #282c34;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
   }
   .bg-img{
-    background-image: url('./assets/img4.png');
+    background-image: url('./assets/slide2.jpg');
   }
   .bg-img2{
     background-image: url('./assets/img5.jpg');

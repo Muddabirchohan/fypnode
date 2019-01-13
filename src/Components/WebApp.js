@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core'
 import Header2 from './Header2';
 import webappimage from '../../src/assets/webappimage.png';
+import Slider3 from './slider3';
 
 
 export default class WebApp extends Component {
@@ -30,7 +31,7 @@ axios.get(`http://localhost:7000/products/webproducts`)
   render() {
     return (
       <div>
-        <Header2/>
+        <Slider3/>
             <h1 style={{textAlign: 'center'}}> web app </h1> 
       <div className="cardAllign">
   

@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
 import Header2 from './Header2';
 import mobileapp from '../../src/assets/mobileapp.png';
+import Slider3 from './slider3';
 
 
 export default class MobileApp extends Component {
@@ -29,7 +30,7 @@ axios.get(`http://localhost:7000/products/androidproducts`)
     return (
 
       <div>
-      <Header2/>
+  <Slider3/>
            <h1 style={{textAlign: 'center'}}> Mobile App</h1>
       <div className="cardAllign">
            {this.state.androidproducts.map((obj)=>{

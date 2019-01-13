@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import cart from './../assets/cart.png';
+import ned from './../assets/nedlogo.jpg';
 
 export default class slider3 extends Component {
     componentDidMount(){
@@ -17,11 +17,12 @@ export default class slider3 extends Component {
                 <i className="fas fa-bars"></i>
             </Link>
            
-        <Link to="#" className="brand">myname
-                <span className="size"> <i className="fas fa-horse-head"></i></span>
+        <Link to="#" className="brand">
+            <img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>
         </Link>
           
-    <div className="left">
+          
+    <div className="left" style={{paddingTop: '10px'}}>
         <Link to="#" className="link">Home</Link>
         <Link to="" className="link">Features</Link>
         <Link to="" className="link">Solutions</Link>
@@ -31,13 +32,13 @@ export default class slider3 extends Component {
         <Link to="" className="link">Contact</Link>
     </div>
 
-    <div className="right">
+    <div className="right" style={{paddingTop: '10px'}}>
     {/* <Link to="/cart" className="toggle"> <img src={cart} width="100px" height="50px" alt="cart"/></Link>  */}
-
         <Link to="/cart" className="link">cart</Link>
         <Link to="/sellerlogin" className="link">LogIn</Link>
         
     </div>
+
 </div>
       </div>
     )
