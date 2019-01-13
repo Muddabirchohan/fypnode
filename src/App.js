@@ -9,7 +9,7 @@ import Header2 from './Components/Header2';
 import FrontTop from './Components/FrontTop';
 import PrimarySearchAppBar from './Components/Slider2';
 import Slider3 from './Components/slider3';
-import Footer from './Components/Footer';
+import Footers from './Components/Footers';
 import Categories2 from './Components/Categories2';
 
 class App extends Component {
@@ -22,12 +22,12 @@ class App extends Component {
          {/* <FrontTop/> */}
         <Slider3/>
          <Slider/> 
-         {/* <CategoriesList/> */}
-         <Categories2/>
+         <CategoriesList/>
+         {/* <Categories2/> */}
          <br/><br/>
          {/* <Categories/> */}
          <Products/>
-         {/* <Footer/> */}
+         <Footers/>
       </div>
     );
   }

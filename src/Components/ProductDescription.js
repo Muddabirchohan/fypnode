@@ -52,9 +52,7 @@ export default class ProductDescription extends Component {
             <p> name    :   {products.pname} </p> 
             <p> category :   {products.category} </p> 
             <p> cost   :   {products.cost} </p> 
-            <p> demovideo   :   {products.demoVideoUrl}</p>
-            <p> description   :   {products.pdescription}</p>
-            <p> exeurl   :   {products.exeUrl}</p>
+            <p> demovideo   :   {products.demoVideoUrl}</p>            <p> exeurl   :   {products.exeUrl}</p>
             
             <div className="centerCart"> 
             <br/><br/>

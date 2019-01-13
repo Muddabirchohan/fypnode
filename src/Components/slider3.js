@@ -35,7 +35,7 @@ export default class slider3 extends Component {
     {/* <Link to="/cart" className="toggle"> <img src={cart} width="100px" height="50px" alt="cart"/></Link>  */}
 
         <Link to="/cart" className="link">cart</Link>
-        <Link to="" className="link">LogIn</Link>
+        <Link to="/sellerlogin" className="link">LogIn</Link>
         
     </div>
 </div>

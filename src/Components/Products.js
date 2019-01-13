@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios';
-import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core'
+import {Card,CardActionArea,CardContent,Button} from '@material-ui/core'
 import product from '../../src/assets/product.jpg';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
 import { fetchproducts,addToCart } from '../actions/PostActions';
 
  class Products extends Component {
@@ -78,7 +76,11 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
         return (
       <div  className="cardAllign" id="products">
       
-        {this.props.products.map((obj)=>{
+        {
+          
+          this.props.products === undefined ? 
+          <i class="fas fa-spinner fa-spin fa-4x"></i> : 
+          this.props.products.map((obj)=>{
           return(
       <div key={obj._id}>
       <Card  style={{ width: '320px', height: '280px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}} >
@@ -88,7 +90,7 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
             <img src={product} alt="profile" width="200" height="150"/>
 <p> <h2> <b> {obj.category}</b> </h2> </p>
 <p> <h4>  {obj.cost}  </h4> </p>
-<Button variant="contained" color="primary" onClick={()=> this.props.addToCart(obj,obj._id)}> Add </Button>
+<Button variant="contained" color="primary" onClick={()=> this.props.addToCart(obj)}> Add </Button>
 <Link to={`/productDescription/${obj._id}`}> 
  Description 
  </Link>
@@ -110,8 +112,5 @@ const mapStateToProps = (state,dispatch) => ({
   cart: state.posts.cart,
   addedIds: state.posts.addedIds,
 })
-
-
-
 
 export default connect(mapStateToProps, {fetchproducts,addToCart})(Products);

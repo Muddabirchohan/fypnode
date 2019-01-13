@@ -8,11 +8,18 @@ class Cart extends Component {
     return (
        
       <div>
-            <table>
-                            <h2> Cart Items </h2>
-                            <tr>
-                                             </tr>
-                        </table>
+       {
+          this.props.cart === undefined ? 
+          <i class="fas fa-spinner fa-spin fa-4x"></i> : 
+          this.props.cart.map((product)=>{
+            return(
+              <div> 
+                  {product[2].name}
+              </div>
+            )
+          }
+          )
+        }
       </div>
                        
     )

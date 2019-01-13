@@ -34,14 +34,15 @@ export default function (state = initialState, action) {
             }
 
         case ADD_TO_CART:
-        console.log("helllo", state.cart)
+       
             return {
                 ...state,
-                cart: [...state.cart, action.mycart]
+                cart: [...state.cart, action.product]
                 // addedIds: [...state.addedIds, action.mycart],
                 // totalPrice: [...state.cartPrices, action.mycart.price],
                 // cartCounter: state.cartCounter + 1
             }
+            
 
 
         // case REMOVE_POST:

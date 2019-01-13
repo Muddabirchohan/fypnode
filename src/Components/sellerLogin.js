@@ -13,7 +13,8 @@ constructor(){
     this.state = {
         users: [],
         password: '',
-        email: ''
+        email: '',
+        activeUserId: null
     }
     this.gotoLogin = this.gotoLogin.bind(this);
     this.getEmail = this.getEmail.bind(this);
@@ -40,17 +41,24 @@ componentDidMount() {
     console.log(users);
     var flg = false;
     e.preventDefault();
-   users.map( obj => {
+   users.map((obj) => {
       if (obj.email === this.state.email && obj.pass === this.state.password) {
         this.setState({ change: !this.state.change })
         flg = false
         alert("successfull");
-      }
-      else if (flg == true) {
+        }
+        if(flg === false){
+            this.setState({ activeUserId: obj._id});
+            this.props.history.push(`/sellerProfile/${this.state.activeUserId}`)
+        }
+      else if (flg === true) {
         alert('user not found ');
         flg = false;
       }
     })
+
+    e.preventDefault();
+
   }
 
     getEmail(e){

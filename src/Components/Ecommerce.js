@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
 import Header2 from './Header2';
+import ecommerce from '../../src/assets/ecommerce.png';
+
 
 export default class InternetOfThings extends Component {
   constructor(){
@@ -35,10 +37,13 @@ axios.get(`http://localhost:7000/products/ecommerce`)
           return(
         <Card style={{width: '300px', height: '200px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
         <div> 
-              <p> {obj.pname} </p>
-              <p> {obj.pdescription} </p>
-              <p> {obj.category} </p>
-              
+        <img src={ecommerce} alt="ecommerce" weight="300px" height="100px"/>
+        <p> {obj.pname} </p>
+        <p> {obj.category} </p>    
+        <p> {obj.demoVideoUrl} </p>   
+              <p> {obj.hostUrl} </p>   
+              <p> {obj.exeUrl} </p>   
+              <p> {obj.cost} </p>             
             </div>
             </Card>
           )
