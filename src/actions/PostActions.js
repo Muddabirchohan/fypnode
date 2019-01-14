@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART} from './types';
+import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from './types';
 // import Posts from '../Components/Posts';
 
 export const fetchproducts = () => dispatch => {
@@ -20,22 +20,20 @@ export const getSingleProduct = (id) => dispatch => {
 }
 
 
-export const addToCart = (product) => dispatch => {
+export const addToCart = (product) =>  ({
     // console.log(product)
-    dispatch({
         type: ADD_TO_CART,
         product: product
+})
+
+
+
+export const removeFromCart = (obj) => dispatch => {
+    dispatch({
+        type: REMOVE_FROM_CART,
+        object: obj
     })
 }
-
-
-
-// export const removeFromCart = (obj) => dispatch => {
-//     dispatch({
-//         type: REMOVE_POST,
-//         object: obj
-//     })
-// }
 
 
 

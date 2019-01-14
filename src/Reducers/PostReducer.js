@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART } from '../actions/types';
+import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART } from '../actions/types';
 
 const initialState = {
 
@@ -25,6 +25,13 @@ export default function (state = initialState, action) {
                 ...state,
                 items: action.payload
             }
+            case ADD_TO_CART:
+            console.log("redux" , state.cart);
+            return {
+                ...state,
+                cart: [...state.cart, action.product]
+                
+            }
 
                 case GET_SINGLE_PRODUCT:
             console.log(action.obj);
@@ -33,24 +40,12 @@ export default function (state = initialState, action) {
                 description: action.obj
             }
 
-        case ADD_TO_CART:
-       
+        case REMOVE_FROM_CART:
             return {
                 ...state,
-                cart: [...state.cart, action.product]
-                // addedIds: [...state.addedIds, action.mycart],
-                // totalPrice: [...state.cartPrices, action.mycart.price],
-                // cartCounter: state.cartCounter + 1
+                cart: state.cart.filter(item => item !== action.object),
+                // cartCounter: state.cartCounter - 1
             }
-            
-
-
-        // case REMOVE_POST:
-        //     return {
-        //         ...state,
-        //         cart: state.cart.filter(item => item !== action.object),
-        //         cartCounter: state.cartCounter - 1
-        //     }
 
         default:
             return state;

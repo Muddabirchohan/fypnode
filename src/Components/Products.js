@@ -28,8 +28,8 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
 
     componentDidMount(){
       this.props.fetchproducts();
-      this.props.addToCart();
   }
+
 
   //before redux
   // componentDidMount(){
@@ -106,6 +106,8 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
     )
   }
 }
+
+
 
 const mapStateToProps = (state,dispatch) => ({
   products: state.posts.items,

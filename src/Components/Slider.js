@@ -15,8 +15,8 @@ export default class Slider extends Component {
     {/* <img width="100%%" height="50%" alt="900x500" src={img4} /> */}
     <div className="bg-img"></div>
     <Carousel.Caption>
-      <h3> slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3> WEB CUSTOMIZATION </h3>
+      <p>com let our product customized.</p>
     </Carousel.Caption>
   </Carousel.Item>
  
@@ -24,8 +24,8 @@ export default class Slider extends Component {
     {/* <img width="100%" height="50%" alt="900x500" src={img5}/> */}
     <div className="bg-img2"></div>
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Web Apps </h3>
+      <p>Progressive web apps on your door steps.</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

@@ -29,7 +29,7 @@ export default class slider3 extends Component {
         <Link to="" className="link">Pricing</Link>
         <Link to="" className="link">Demo</Link>
         <Link to="" className="link">Help</Link>
-        <Link to="" className="link">Contact</Link>
+        <Link to="/contactus" className="link">Contact</Link>
     </div>
 
     <div className="right" style={{paddingTop: '10px'}}>

@@ -6,6 +6,7 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import productdescription from '../../src/assets/productdescription.jpg';
 import Header2 from './Header2';
 import '../App.css';
+import Slider3 from './slider3';
 export default class ProductDescription extends Component {
     constructor(){
         super();
@@ -26,7 +27,7 @@ export default class ProductDescription extends Component {
         const {products} = this.state;
         return(
             <div>
-                <Header2/>
+                <Slider3/>
                <Grid>
   <Row>
 

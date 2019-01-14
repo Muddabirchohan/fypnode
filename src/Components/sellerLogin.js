@@ -9,7 +9,6 @@ import Header from './Header';
 class Login extends Component {
 constructor(){
     super();
-
     this.state = {
         users: [],
         password: '',
@@ -43,13 +42,10 @@ componentDidMount() {
     e.preventDefault();
    users.map((obj) => {
       if (obj.email === this.state.email && obj.pass === this.state.password) {
-        this.setState({ change: !this.state.change })
         flg = false
         alert("successfull");
-        }
-        if(flg === false){
-            this.setState({ activeUserId: obj._id});
-            this.props.history.push(`/sellerProfile/${this.state.activeUserId}`)
+        this.setState({ activeUserId: obj._id});
+        this.props.history.push(`/sellerProfile/${this.state.activeUserId}`);
         }
       else if (flg === true) {
         alert('user not found ');
