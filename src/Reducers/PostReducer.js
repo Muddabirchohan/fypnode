@@ -29,8 +29,9 @@ export default function (state = initialState, action) {
             console.log("redux" , state.cart);
             return {
                 ...state,
-                cart: [...state.cart, action.product]
-                
+                cart: [...state.cart, action.products],
+                cartCounter: state.cartCounter+1,
+                addedIds: [...state.addedIds,action.addedId]
             }
 
                 case GET_SINGLE_PRODUCT:
@@ -40,14 +41,34 @@ export default function (state = initialState, action) {
                 description: action.obj
             }
 
-        case REMOVE_FROM_CART:
-            return {
-                ...state,
-                cart: state.cart.filter(item => item !== action.object),
-                // cartCounter: state.cartCounter - 1
-            }
+                 case REMOVE_FROM_CART:
 
-        default:
+                 {
+                    var newCart = state.cart.map(elm =>{
+                        if(elm._id !== action.productID){
+                            return elm;
+                        }
+                    });
+                    newCart = newCart.filter(elm=> elm !== undefined);
+                    
+                    return {
+                    ...state,
+                    cart: newCart
+                }}
+        //      {
+        //         var newCart = state.cart.filter(item => item !== action.object),
+        //         cartCounter =  state.cartCounter-1
+            
+        //         newCart = newCart.filter(elm=> elm != undefined);
+                
+        //         return {
+        //         ...state,
+        //         cart: newCart,
+        //         cartCounter
+        //     }
+        // }
+
+               default:
             return state;
     }
 }

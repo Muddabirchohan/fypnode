@@ -31,7 +31,7 @@ export default class ProductDescription extends Component {
                <Grid>
   <Row>
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={12} md={4} lg={8}>
     <Card >
       <CardActionArea>
         <CardContent>
@@ -44,7 +44,8 @@ export default class ProductDescription extends Component {
     </Col>
     
     
-    <Col xs={4} sm ={12} md={4} lg={8}> 
+    <Col xs={4} sm ={12} md={4} lg={4}> 
+    
     <Card >
       <CardActionArea>
         <CardContent >
@@ -57,7 +58,31 @@ export default class ProductDescription extends Component {
             
             <div className="centerCart"> 
             <br/><br/>
-    <Button variant="contained" color="success"> Add To Cart </Button>
+    
+</div>
+            </div>
+        </CardContent>
+      </CardActionArea>
+      <CardActions> 
+      </CardActions>
+    </Card>
+
+
+        
+        <Card >
+      <CardActionArea>
+        <CardContent >
+              <div className="icons">
+            <h2> Seller Profile</h2>
+            <p> name      :   </p> 
+            <p> category  :    </p> 
+            <p> cost      :    </p> 
+            <p> demovideo :   </p>
+            <p> exeurl    :  </p>
+            
+            <div className="centerCart"> 
+            <br/><br/>
+
 </div>
             </div>
         </CardContent>

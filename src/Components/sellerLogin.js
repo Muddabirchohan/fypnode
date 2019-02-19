@@ -13,7 +13,7 @@ constructor(){
         users: [],
         password: '',
         email: '',
-        activeUserId: null
+        activeUser: {}
     }
     this.gotoLogin = this.gotoLogin.bind(this);
     this.getEmail = this.getEmail.bind(this);
@@ -36,26 +36,23 @@ componentDidMount() {
 
   gotoLogin(e) {
       
-    let { users } = this.state;
-    console.log(users);
-    var flg = false;
     e.preventDefault();
-   users.map((obj) => {
-      if (obj.email === this.state.email && obj.pass === this.state.password) {
-        flg = false
-        alert("successfull");
-        this.setState({ activeUserId: obj._id});
-        this.props.history.push(`/sellerProfile/${this.state.activeUserId}`);
+    console.log("hello", this.state.email, this.state.password)
+   
+    axios.get(`http://localhost:7000/sellers/${this.state.email}&${this.state.password}`)
+   
+    .then(res => {
+        console.log(res)
+        if(res.data.userStatus === "exist"){
+        this.props.history.push(`/sellerprofile/${res.data.user._id}`);
         }
-      else if (flg === true) {
-        alert('user not found ');
-        flg = false;
-      }
-    })
-
-    e.preventDefault();
+        else{
+            alert("authentication failed");
+        }
+    });
 
   }
+  
 
     getEmail(e){
         this.setState({ email: e.target.value})

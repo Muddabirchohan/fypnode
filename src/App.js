@@ -11,23 +11,23 @@ import PrimarySearchAppBar from './Components/Slider2';
 import Slider3 from './Components/slider3';
 import Footers from './Components/Footers';
 import Categories2 from './Components/Categories2';
+import CardTwo from './Components/CardTwo';
+
 
 class App extends Component {
   render() {
     return (
       <div>
-         {/* <Header/> */}
-         {/* <Header2/> */}
-         {/* <PrimarySearchAppBar/> */}
-         {/* <FrontTop/> */}
+
         <Slider3/>
          <Slider/> 
          <CategoriesList/>
-         {/* <Categories2/> */}
+         {/* <CardTwo/> */}
+         {/* {/* <Categories2/> */}
          <br/><br/>
          {/* <Categories/> */}
-         <Products/>
-         <Footers/>
+          <Products/>
+         <Footers/> 
       </div>
     );
   }

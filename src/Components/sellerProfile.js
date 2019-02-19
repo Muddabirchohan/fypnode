@@ -15,6 +15,7 @@ import Header2 from './Header2';
     }
 
     componentDidMount(){
+        
         const { id } = this.props.match.params;
         axios(`http://localhost:7000/sellers/${id}`)
         .then(res =>{

@@ -54,13 +54,13 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
 
 
 
-//from redux store
-// addCart(obj, _id){
-//   let {addedIds, addToCart} = this.props;
-//    if(addedIds.includes(_id)){
-//        alert('already exist')
-//    }else addToCart(obj, _id)
-// }
+// from redux store
+addCart(obj, _id){
+  let {addedIds, addToCart} = this.props;
+   if(addedIds.includes(_id)){
+       alert('already exist')
+   }else addToCart(obj, _id)
+}
 
 
   // addToCart(obj){
@@ -71,34 +71,71 @@ import { fetchproducts,addToCart } from '../actions/PostActions';
   //   console.log(this.state.cart);
   // }
     render() {
-    
     // console.log(this.state.products)
         return (
+
+
+//           <div> 
+
+
+ 
+//           {this.props.products.map((obj)=>{
+//             return(
+//               <div className="main-column">
+//               <div>
+//               <img class="card-img-top" src="" alt="Cardcap"/>
+//               <div class="card-body" className="mid-col">
+//               {obj.pname}
+//               </div>
+
+// <div className="sidebar-one">
+// 1
+//   </div> 
+
+
+// <div className="sidebar-two">
+// 2
+//   </div> 
+
+
+// <div className="sidebar-three">
+// 3
+//   </div> 
+
+//               <a href="works" class="btn btn-primary">Go somewhere</a>
+//               </div>
+//               </div>
+//             )
+//           })}
+  
+
+//           </div>
+
+
       <div  className="cardAllign" id="products">
-      
-        {
-          
+              {
           this.props.products === undefined ? 
           <i class="fas fa-spinner fa-spin fa-4x"></i> : 
           this.props.products.map((obj)=>{
           return(
       <div key={obj._id}>
-      <Card  style={{ width: '320px', height: '280px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}} >
+    
+      <Card className="card-style">
       <CardActionArea>
         <CardContent>
             <div>
-            <img src={product} alt="profile" width="200" height="150"/>
+            <img src={product} alt="profile" width="150" height="150"/>
 <p> <h2> <b> {obj.category}</b> </h2> </p>
 <p> <h4>  {obj.cost}  </h4> </p>
-<Button variant="contained" color="primary" onClick={()=> this.props.addToCart(obj)}> Add </Button>
-<Link to={`/productDescription/${obj._id}`}> 
- Description 
- </Link>
+
+ <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> Add </Button> 
+
+<Link to={`/productDescription/${obj._id}`}>  Description </Link>
   </div>
   </CardContent>
-        
-      </CardActionArea>
+        </CardActionArea>
     </Card>
+  
 </div> 
          )      
      })}  

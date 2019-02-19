@@ -20,21 +20,19 @@ export const getSingleProduct = (id) => dispatch => {
 }
 
 
-export const addToCart = (product) =>  ({
+export const addToCart = (product,id) =>  ({
     // console.log(product)
         type: ADD_TO_CART,
-        product: product
+        products: product,
+        addedId: id
 })
 
 
 
-export const removeFromCart = (obj) => dispatch => {
-    dispatch({
+export const removeFromCart = (productID) => ({  
         type: REMOVE_FROM_CART,
-        object: obj
+        productID: productID
     })
-}
-
 
 
 
