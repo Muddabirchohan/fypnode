@@ -16,6 +16,7 @@ import customerProfile from './Components/customerProfile';
 import ProductDescription from './Components/ProductDescription';
 import Contactus from './Components/ContactUs';
 import Cart from './Components/Cart';
+import sellPage from './Components/sellPage';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -39,6 +40,7 @@ export default class RoutersComponent extends Component {
         <Route path="/productDescription/:myid" component={ProductDescription}/> 
         <Route path="/cart" component={Cart}/> 
         <Route path="/contactus" component={Contactus}/> 
+        <Route path="/sell" component={sellPage}/> 
         
         </Switch>
         </BrowserRouter>

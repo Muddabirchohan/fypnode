@@ -17,11 +17,22 @@ import Header2 from './Header2';
     componentDidMount(){
         
         const { id } = this.props.match.params;
-        axios(`http://localhost:7000/sellers/${id}`)
+        
+        axios.get(`http://localhost:7000/sellers/${id}`)
         .then(res =>{
+            console.log(res.data);
             const user = res.data;
             this.setState({ sellerProfile: user });
         })
+
+//         fetch(`http://localhost:7000/sellers/${id}`,{  credentials: 'include' })
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(JSON.stringify(myJson));
+//     this.setState({ sellerProfile: myJson });
+//   });
     }
 
 render(){
@@ -38,7 +49,7 @@ render(){
         <CardContent >
             <div className="icons">
             <img src={profile} alt="user"/>
-            <p> name    :   {sellerProfile.sname} </p> 
+            <p> name    :   {sellerProfile.name} </p> 
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
             <p> Contact :   {sellerProfile.contact} </p> 

@@ -5,6 +5,11 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 
+var header = {
+    'Content-Type': 'application/json',
+    dataType:'jsonp',
+    responseType:'application/json'
+}
 
 class Login extends Component {
 constructor(){
@@ -23,7 +28,7 @@ constructor(){
 
 componentDidMount() {
 
-    axios.get("http://localhost:7000/sellers/getsellers")
+    axios.get("http://localhost:7000/sellers/getseller")
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
@@ -37,10 +42,9 @@ componentDidMount() {
   gotoLogin(e) {
       
     e.preventDefault();
-    console.log("hello", this.state.email, this.state.password)
+    console.log("hello", this.state.email, this.state.password);
    
     axios.get(`http://localhost:7000/sellers/${this.state.email}&${this.state.password}`)
-   
     .then(res => {
         console.log(res)
         if(res.data.userStatus === "exist"){

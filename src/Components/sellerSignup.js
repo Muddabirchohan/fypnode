@@ -93,7 +93,7 @@ componentWillMount() {
                       <Card className="login" style={{backgroundColor: '#00000085'}}>
             <div >
                 <h1> Seller Form </h1> <hr/>
-                <Form horizontal action="post" onSubmit={this.Postdata.bind(this)}>
+                <Form horizontal method="post" onSubmit={this.Postdata.bind(this)}>
 
 
                         <FormGroup>

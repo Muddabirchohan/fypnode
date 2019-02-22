@@ -466,3 +466,48 @@ padding: 10px;
 margin-left: 30px;
 margin-top: 10px;
 }
+/* sell page */
+.sellParent{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+.sellParent>div:nth-child(1){
+  display: flex;
+  justify-content: center;
+}
+.sellParent>form{
+  /* margin-left: auto;
+  margin-right: auto; */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 60%;
+  height: 530px;
+}
+.sellParent>form>div:first-child>input:last-child{
+  margin-bottom: 0.5em;
+}
+.form-control-lg{
+  margin-top: 0.5em;
+  margin-left: 1.3em;
+}
+.form-control{
+  width: 53%;
+}
+
+.sell-img{
+  background-image: url('./assets/slide2.jpg');
+}
+.sellParent>form>div:nth-child(1)>div{
+  margin-top: 6px;
+display: flex;
+}
+.btn-block{
+  width: 53%;
+}
+.sellParent>form>div:nth-child(1)>button{
+  margin-left: 1.3em;
+  margin-top: 0.5em;
+}
