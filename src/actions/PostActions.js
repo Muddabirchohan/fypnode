@@ -1,5 +1,6 @@
 import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from './types';
 // import Posts from '../Components/Posts';
+import axios from 'axios';
 
 export const fetchproducts = () => dispatch => {
     fetch('http://localhost:7000/products/getproducts')
@@ -10,19 +11,33 @@ export const fetchproducts = () => dispatch => {
         }))
 }
 
+export const sellerlogin = () => dispatch => {
+    fetch('http://localhost:7000/s/getproducts')
+        .then(res => res.json())
+        .then(posts => dispatch({
+            type: FETCH_PRODUCTS,
+            payload: posts
+        }))
+}
 
-export const getSingleProduct = (id) => dispatch => {
+
+export const getSingleProduct = (obj) => dispatch => {
 
     fetch(`http://localhost:7000/products/${id}`)
     .then(res => res.json())
     .then(pro => dispatch({
         type: GET_SINGLE_PRODUCT,
+<<<<<<< HEAD
         payload: pro
     }))
     // dispatch({
     //     type: GET_SINGLE_PRODUCT,
     //     obj: id
     // })
+=======
+        obj: obj
+    })
+>>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
 }
 
 

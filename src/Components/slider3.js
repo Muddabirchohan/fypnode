@@ -33,7 +33,7 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
         <Link to="" className="link">Solutions</Link>
         <Link to="" className="link">Pricing</Link>
         <Link to="" className="link">Demo</Link>
-        <Link to="" className="link">Sell</Link>
+        <Link to="/sell" className="link">Sell</Link>
         <Link to="/contactus" className="link">Contact</Link>
     </div>
 

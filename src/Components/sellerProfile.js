@@ -17,14 +17,29 @@ import Slider3 from './slider3';
 
     componentDidMount(){
         
+<<<<<<< HEAD
         const {id} = this.props.match.params;
         console.log("id",id);
+=======
+        const { id } = this.props.match.params;
+        
+>>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
         axios.get(`http://localhost:7000/sellers/${id}`)
         .then(res =>{
+            console.log(res.data);
             const user = res.data;
             console.log("users",user)
             this.setState({ sellerProfile: user });
         })
+
+//         fetch(`http://localhost:7000/sellers/${id}`,{  credentials: 'include' })
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(JSON.stringify(myJson));
+//     this.setState({ sellerProfile: myJson });
+//   });
     }
 
 render(){

@@ -94,6 +94,7 @@ componentWillMount() {
                       <Col> 
                       {/* <Card className="login" style={{backgroundColor: '#00000085'}}> */}
             <div >
+<<<<<<< HEAD
                 {/* <h1> Seller Registration Form </h1> <hr/> */}
                 <Card className="post-product">
                 <h2> S-BAY </h2>
@@ -160,6 +161,66 @@ componentWillMount() {
 
 
              
+=======
+                <h1> Seller Form </h1> <hr/>
+                <Form horizontal method="post" onSubmit={this.Postdata.bind(this)}>
+
+
+                        <FormGroup>
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Name
+                        </Col> <br/><br/>
+                        <Col sm={10}>
+                            <FormControl type="text" placeholder="name" onChange={this.getName}/>
+                        </Col>
+                    </FormGroup>
+
+                     
+                    <FormGroup >
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Email
+                        </Col> <br/><br/>
+                        <Col sm={10}>
+                            <FormControl type="email" placeholder="Email" onChange={this.getEmail}/>
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup >
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Password
+                        </Col> <br/><br/>
+                        <Col sm={10}>
+                            <FormControl type="password" placeholder="Password" onChange={this.getPassword} />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup >
+                        <Col componentClass={ControlLabel} sm={2}>
+                            contact
+                        </Col> <br/><br/>
+                        <Col sm={10}>
+                            <FormControl type="number" placeholder="contact" onChange={this.getContact}/>
+                        </Col>
+                    </FormGroup>
+
+
+                       <FormGroup >
+                        <Col componentClass={ControlLabel} sm={2}>
+                            address
+                        </Col> <br/><br/>
+                        <Col sm={10}>
+                            <FormControl type="text" placeholder="address" onChange={this.getAddress}/>
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button  bsStyle="success" type="submit">Sign in</Button>
+                        </Col>
+                    </FormGroup>
+                    <Link to="/sellerLogin"> already have an account? login  </Link>
+                </Form>
+>>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
             </div>
             {/* </Card> */}
                       </Col>

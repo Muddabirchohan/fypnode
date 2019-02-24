@@ -16,8 +16,12 @@ import customerProfile from './Components/customerProfile';
 import ProductDescription from './Components/ProductDescription';
 import Contactus from './Components/ContactUs';
 import Cart from './Components/Cart';
+<<<<<<< HEAD
 import PostProduct from './Components/PostProduct';
 import CustomerRegistartion from './Components/CustomerRegistration';
+=======
+import sellPage from './Components/sellPage';
+>>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
 
 export default class RoutersComponent extends Component {
   render() {
@@ -39,10 +43,14 @@ export default class RoutersComponent extends Component {
         <Route path="/productDescription/:myid" component={ProductDescription}/> 
         <Route path="/cart" component={Cart}/> 
         <Route path="/contactus" component={Contactus}/> 
+<<<<<<< HEAD
         <Route path="/postproducts" component={PostProduct}/> 
         <Route path="/customerSighnup" component={CustomerRegistartion}/> 
         <Route path="/customerLogin" component={customerLogin}/> 
         
+=======
+        <Route path="/sell" component={sellPage}/> 
+>>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
         
         </Switch>
         </BrowserRouter>
