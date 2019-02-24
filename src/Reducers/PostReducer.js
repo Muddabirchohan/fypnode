@@ -35,10 +35,10 @@ export default function (state = initialState, action) {
             }
 
                 case GET_SINGLE_PRODUCT:
-            console.log(action.obj);
+            console.log(action.payload);
             return {
                 ...state,
-                description: action.obj
+                description: action.payload
             }
 
                  case REMOVE_FROM_CART:

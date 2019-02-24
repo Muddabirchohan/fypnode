@@ -16,6 +16,8 @@ import customerProfile from './Components/customerProfile';
 import ProductDescription from './Components/ProductDescription';
 import Contactus from './Components/ContactUs';
 import Cart from './Components/Cart';
+import PostProduct from './Components/PostProduct';
+import CustomerRegistartion from './Components/CustomerRegistration';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -32,13 +34,15 @@ export default class RoutersComponent extends Component {
         <Route  path="/artificialintelligence" component={ArtficialIntelligence}/>  
         <Route path="/sellerLogin" component={sellerLogin}/> 
         <Route path="/sellerSighnup" component={sellerSignup}/> 
-        <Route path="/customerSignup" component={customerSignup}/> 
-        <Route path="/customerLogin" component={customerLogin}/> 
         <Route path="/sellerProfile/:id" component={sellerProfile}/> 
         <Route path="/customerProfile/:id" component={customerProfile}/> 
         <Route path="/productDescription/:myid" component={ProductDescription}/> 
         <Route path="/cart" component={Cart}/> 
         <Route path="/contactus" component={Contactus}/> 
+        <Route path="/postproducts" component={PostProduct}/> 
+        <Route path="/customerSighnup" component={CustomerRegistartion}/> 
+        <Route path="/customerLogin" component={customerLogin}/> 
+        
         
         </Switch>
         </BrowserRouter>

@@ -25,6 +25,7 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
             <img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>
         </Link>
           
+          <h1 style={{paddingTop: '15px',color: 'white',fontFamily:'fantasy'}}> S-BAY </h1>
           
     <div className="left" style={{paddingTop: '10px'}}>
         <Link to="#" className="link">Home</Link>

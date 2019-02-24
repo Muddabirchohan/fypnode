@@ -55,7 +55,7 @@ this.handleChange = this.handleChange.bind(this)
     return (
       <div>
         <Slider3/>
-        <h2 style={{textAlign: 'center'}}> Cart Component </h2> 
+      
         <Table responsive>
   <thead>
     <tr>

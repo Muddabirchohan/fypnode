@@ -4,107 +4,92 @@ import Card from '@material-ui/core/Card';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
+import Slider3 from './slider3';
 
-
-class Login extends Component {
-constructor(){
-    super();
-
-    this.state = {
-        users: [],
-        password: '',
-        email: ''
+class customerLogin extends Component {
+    constructor(){
+        super();
+        this.state = {
+            users: [],
+            password: '',
+            email: '',
+            activeUser: {}
+        }
+        this.gotoLogin = this.gotoLogin.bind(this);
+        this.getEmail = this.getEmail.bind(this);
+        this.getPassword = this.getPassword.bind(this);
+    
     }
-    this.gotoLogin = this.gotoLogin.bind(this);
-    this.getEmail = this.getEmail.bind(this);
-    this.getPassword = this.getPassword.bind(this);
-
-}
-
-componentDidMount() {
-
-    axios.get("http://localhost:7000/customers/getcustomers")
-      .then(res => {
-        const users = res.data;
-        console.log("users are : ",users)
-        let array = Object.values(users);
-        this.setState({ users: array });
-      })
-      
-  }
-
-
-  gotoLogin(e) {
-      
-    let { users } = this.state;
-    console.log(users);
-    var flg = false;
-    e.preventDefault();
-   users.map( obj => {
-      if (obj.email === this.state.email && obj.pass === this.state.password) {
-        this.setState({ change: !this.state.change })
-        flg = false
-        this.props.history.push('/');
+    
+    componentDidMount() {
+    
+        axios.get("http://localhost:7000/customers/getcustomers")
+          .then(res => {
+            const users = res.data;
+            console.log("users are : ",users)
+             let array = Object.values(users);
+            this.setState({ users });
+          })
+          
       }
-      else if (flg === true) {
-        alert('user not found ');
-        flg = false;
+    
+    
+      gotoLogin(e) {
+          
+        e.preventDefault();       
+        axios.get(`http://localhost:7000/customers/${this.state.email}&${this.state.password}`)
+       
+        .then(res => {
+    
+            if(res.data.userStatus === "exist"){
+                console.log(res.data.user._id);
+            this.props.history.push(`/customerProfile/${res.data.user._id}`);
+            }
+            else{
+                alert("authentication failed");
+            }
+        });
+    
       }
-    })
-  }
+      
+    
+        getEmail(e){
+            this.setState({ email: e.target.value})
+        }
+    
+        getPassword(e){
+        this.setState({ password: e.target.value})
+        } 
+ 
 
-    getEmail(e){
-        this.setState({ email: e.target.value})
-    }
-
-    getPassword(e){
-    this.setState({ password: e.target.value})
-    }
-    render() {
-        console.log(this.state.users)
+        render(){
         return (
-            <div className="login-bg">
-        
-            <Grid>
-                <Row> 
-                    <Col sm={12}>
-            <Card className="login" style={{backgroundColor: '#00000085'}}>
-            <div >
-                <h1> Login Form </h1> <hr/>
-                <Form horizontal onSubmit={this.gotoLogin}>
-                    <FormGroup controlId="formHorizontalEmail">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Email
-                        </Col> <br/><br/>
-                        <Col sm={10}>
-                            <FormControl type="email" placeholder="Email" onChange={this.getEmail}/>
-                        </Col>
-                    </FormGroup>
+            <div>
+           
+           <Slider3/>
+           <Card className="login-seller">
+                <h2> S-BAY </h2>
+                <form onSubmit={this.gotoLogin} method="post">
 
-                    <FormGroup controlId="formHorizontalPassword">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Password
-                        </Col> <br/><br/>
-                        <Col sm={10}>
-                            <FormControl type="password" placeholder="Password" onChange={this.getPassword} />
-                        </Col>
-                    </FormGroup>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.getEmail}/>
+  </div>
 
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button  bsStyle="success" type="submit">Login</Button>
-                        </Col>
-                    </FormGroup>
-                </Form>
-            </div>
-            <Link to="customerSignup"> register or sighnup </Link>
-            </Card>
-            </Col>
-            </Row>
-            </Grid>
-            </div>
-        );
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.getPassword}/>
+  </div>
+  <button class="btn btn-primary">Login </button>
+  <span>
+  <Link to="/customerSighnup"> register or sighnup </Link>
+  </span>
+</form>
+</Card>
+
+                </div>
+        )    
     }
 }
 
-export default Login;
+export default customerLogin;

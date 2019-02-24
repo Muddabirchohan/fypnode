@@ -1,10 +1,11 @@
-import React,{component, Component} from 'react';
+import React,{ Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
 import {Grid,Row,Col} from 'react-bootstrap';
 import profile from '../../src/assets/profile.jpg';
 import Header2 from './Header2';
+import Slider3 from './slider3';
  class sellerProfile extends Component{
 
     constructor(){
@@ -16,10 +17,12 @@ import Header2 from './Header2';
 
     componentDidMount(){
         
-        const { id } = this.props.match.params;
-        axios(`http://localhost:7000/sellers/${id}`)
+        const {id} = this.props.match.params;
+        console.log("id",id);
+        axios.get(`http://localhost:7000/sellers/${id}`)
         .then(res =>{
             const user = res.data;
+            console.log("users",user)
             this.setState({ sellerProfile: user });
         })
     }
@@ -28,7 +31,7 @@ render(){
     const {sellerProfile} = this.state;
     return(
         <div>
-            <Header2/>
+            <Slider3/>
        <Grid>
   <Row>
 
@@ -38,7 +41,7 @@ render(){
         <CardContent >
             <div className="icons">
             <img src={profile} alt="user"/>
-            <p> name    :   {sellerProfile.sname} </p> 
+            <p> name    :   {sellerProfile.name} </p> 
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
             <p> Contact :   {sellerProfile.contact} </p> 
@@ -54,7 +57,10 @@ render(){
       <CardActionArea>
         <CardContent >
             <div className="icons">
-     
+
+            <h1> Wellcome {sellerProfile.name} </h1>
+            <h4> Add Post </h4> 
+            <Link to="/postproducts"> Add post </Link> 
             </div>
         </CardContent>
       </CardActionArea>

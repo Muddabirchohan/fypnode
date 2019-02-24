@@ -13,10 +13,16 @@ export const fetchproducts = () => dispatch => {
 
 export const getSingleProduct = (id) => dispatch => {
 
-    dispatch({
+    fetch(`http://localhost:7000/products/${id}`)
+    .then(res => res.json())
+    .then(pro => dispatch({
         type: GET_SINGLE_PRODUCT,
-        obj: id
-    })
+        payload: pro
+    }))
+    // dispatch({
+    //     type: GET_SINGLE_PRODUCT,
+    //     obj: id
+    // })
 }
 
 

@@ -3,6 +3,10 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
 import {Grid,Row,Col} from 'react-bootstrap';
+import Slider3 from './slider3';
+import profile from '../../src/assets/profile.jpg';
+
+
 
  class customerProfile extends Component{
 
@@ -26,40 +30,40 @@ render(){
     const {customerProfile} = this.state;
     return(
         <div>
+            <Slider3/>
        <Grid>
-  <Row className="show-grid">
+  <Row>
 
     <Col xs={4} sm ={12} md={4} lg={4}>
     <Card >
       <CardActionArea>
         <CardContent >
             <div className="icons">
-            <img src="" alt="user"/>
-            <p> {customerProfile.sname} </p> 
-            <p> {customerProfile.address} </p> 
-            <p> {customerProfile.email} </p> 
-            <p> {customerProfile.contact} </p> 
+            <img src={profile} alt="user"/>
+            <p> name    :   {customerProfile.name} </p> 
+            <p> Address :   {customerProfile.address} </p> 
+            <p> Email   :   {customerProfile.email} </p> 
+            <p> Contact :   {customerProfile.contact} </p> 
             </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      
-      </CardActions>
     </Card>
     </Col>
     
     
     <Col xs={4} sm ={12} md={4} lg={8}> 
-    <CardActionArea>
+    <Card >
+      <CardActionArea>
         <CardContent >
             <div className="icons">
-            <p> {customerProfile.sname} </p> 
+
+            <h1> Wellcome {customerProfile.name} </h1>
             </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      
+      <CardActions> 
       </CardActions>
+    </Card>
     </Col>
     </Row>
 </Grid>
