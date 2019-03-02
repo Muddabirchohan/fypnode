@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import '../App.css';
+// import { Grid } from '@material-ui/core';
+import {Grid,Col,Row} from 'react-bootstrap';
+
+
 export default class Footers extends Component {
   render() {
     return (
       <div>
-                <footer>
+
+
+        <footer>
                 <div>
                 
                     <Link to="#">technologies</Link>
@@ -29,7 +35,7 @@ export default class Footers extends Component {
                     <Link to="#">work</Link>
                 </div>
          </footer>
-  
+   
           
         
         <div class="ninthSection">

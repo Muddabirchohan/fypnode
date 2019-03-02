@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 export default class CategoriesList extends Component {
   render() {
     return (
-      <div>
+      <div class="list-categories">
 
 
 
@@ -16,7 +16,7 @@ export default class CategoriesList extends Component {
     
   
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="/mobileapp"> 
     <Card >
       <CardActionArea>
@@ -42,7 +42,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="webapp"> 
     <Card>
       <CardActionArea>
@@ -69,7 +69,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="vrar"> 
     <Card >
       <CardActionArea>
@@ -102,7 +102,7 @@ export default class CategoriesList extends Component {
     
   
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="artificialintelligence"> 
     <Card >
       <CardActionArea>
@@ -128,7 +128,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="ecommerce"> 
     <Card >
       <CardActionArea>
@@ -153,7 +153,7 @@ export default class CategoriesList extends Component {
     </Link>
     </Col>
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="internetofthings"> 
     <Card >
       <CardActionArea>

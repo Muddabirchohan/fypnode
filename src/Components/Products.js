@@ -73,45 +73,6 @@ addCart(obj, _id){
     render() {
     // console.log(this.state.products)
         return (
-
-
-//           <div> 
-
-
- 
-//           {this.props.products.map((obj)=>{
-//             return(
-//               <div className="main-column">
-//               <div>
-//               <img class="card-img-top" src="" alt="Cardcap"/>
-//               <div class="card-body" className="mid-col">
-//               {obj.pname}
-//               </div>
-
-// <div className="sidebar-one">
-// 1
-//   </div> 
-
-
-// <div className="sidebar-two">
-// 2
-//   </div> 
-
-
-// <div className="sidebar-three">
-// 3
-//   </div> 
-
-//               <a href="works" class="btn btn-primary">Go somewhere</a>
-//               </div>
-//               </div>
-//             )
-//           })}
-  
-
-//           </div>
-
-
       <div  className="cardAllign" id="products">
               {
           this.props.products === undefined ? 
@@ -120,22 +81,30 @@ addCart(obj, _id){
           return(
       <div key={obj._id}>
     
+    
+    <div className="description"> 
       <Card className="card-style">
+      <Link to={`/productDescription/${obj._id}` }>   
       <CardActionArea>
         <CardContent>
             <div>
             <img src={product} alt="profile" width="150" height="150"/>
-<p> <h2> <b> {obj.category}</b> </h2> </p>
-<p> <h4>  {obj.cost}  </h4> </p>
+<p> <h5> <b> {obj.pname}</b> </h5> </p>
+<p> <h5>  {obj.cost}  </h5> </p>
 
- <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> Add </Button> 
-
-<Link to={`/productDescription/${obj._id}`}>  Description </Link>
-  </div>
+ </div>
   </CardContent>
         </CardActionArea>
-    </Card>
+        </Link> 
+        <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> Add <i class="fas fa-cart-plus"></i> </Button> 
+          
   
+    </Card>
+
+   
+    </div> 
+
+
 </div> 
          )      
      })}  

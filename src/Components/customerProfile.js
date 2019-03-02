@@ -34,7 +34,7 @@ render(){
        <Grid>
   <Row>
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={12} sm ={12} md={6} lg={4}>
     <Card >
       <CardActionArea>
         <CardContent >
@@ -51,13 +51,14 @@ render(){
     </Col>
     
     
-    <Col xs={4} sm ={12} md={4} lg={8}> 
+    <Col xs={12} sm ={12} md={6} lg={8}> 
     <Card >
       <CardActionArea>
         <CardContent >
             <div className="icons">
 
             <h1> Wellcome {customerProfile.name} </h1>
+            <Link to={`/newProductRequest/${customerProfile._id}`}> request for new product </Link>
             </div>
         </CardContent>
       </CardActionArea>

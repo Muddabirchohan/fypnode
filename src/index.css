@@ -86,3 +86,60 @@ code {
   }
   
 }
+
+
+@media (min-width:320px ) and (max-width: 767px) {
+
+.style-slide{
+ height: 200px !important;
+}
+
+.style-slide img{
+  height: 150px;
+ }
+
+ .MuiCardContent-root-109{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+ }
+
+
+.MuiCardContent-root-37{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+
+.login-seller{
+     width: 300px !important;
+  display: block !important;
+  margin-top: 100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.post-product{
+  margin-left: auto !important;
+  margin-right: auto !important; 
+  width: 280px !important;
+}
+
+footer{
+  display:none !important; 
+}
+
+}
+
+@media (min-width:768px ) and (max-width: 991px) {
+
+}
+
+
+
+@media (min-width:992px ) and (max-width: 1200px) {
+  .invoice{
+    width: 300px;
+  }
+}

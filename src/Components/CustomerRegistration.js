@@ -11,11 +11,11 @@ export default class CustomerRegistartion extends Component {
     
         this.state = {
             users: [],
-            password: '',
-            email: '',
-            name: '',
-            contact: '',
-            address: ''
+            password: null,
+            email: null,
+            name: null,
+            contact: null,
+            address: null
         }
         // this.gotoLogin = this.gotoLogin.bind(this);
         this.getEmail = this.getEmail.bind(this);
@@ -113,8 +113,8 @@ export default class CustomerRegistartion extends Component {
      <label for="exampleInputPassword1">Password</label>
      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.getPassword}/>
    </div>
-   <Link to="/customerLogin"> Login </Link>
-   <button class="btn btn-primary">Submit</button>
+   <Link to="/customerLogin" style={{marginLeft: '50px' }}> go to Login </Link>
+   <button class="btn btn-primary" style={{marginTop: '20PX'}}>Submit</button>
  </form>
  </Card>
  </div>

@@ -19,7 +19,8 @@ constructor(){
         users: [],
         password: '',
         email: '',
-        activeUser: {}
+        activeUser: {},
+        isLoggedIn: false
     }
     this.gotoLogin = this.gotoLogin.bind(this);
     this.getEmail = this.getEmail.bind(this);
@@ -29,12 +30,12 @@ constructor(){
 
 componentDidMount() {
 
-    axios.get("http://localhost:7000/sellers/getseller")
+    axios.get("http://localhost:7000/sellers/getsellers")
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
          let array = Object.values(users);
-        this.setState({ users });
+        this.setState({ users: array });
       })
       
   }
@@ -43,23 +44,21 @@ componentDidMount() {
   gotoLogin(e) {
       
     e.preventDefault();
-    console.log("hello", this.state.email, this.state.password);
-   
+
+ 
     axios.get(`http://localhost:7000/sellers/${this.state.email}&${this.state.password}`)
     .then(res => {
-        console.log("hello rehan",res)
+      console.log(res.data);
         if(res.data.userStatus === "exist"){
-            console.log(res.data.user._id);
-        this.props.history.push(`/sellerprofile/${res.data.user._id}`);
+          this.setState({isLoggedIn: !this.state.isLoggedIn})
+        this.props.history.push(`/sellerProfile/${res.data.user._id}/${this.state.isLoggedIn}`);
         }
         else{
             alert("authentication failed");
         }
     });
-
   }
   
-
     getEmail(e){
         this.setState({ email: e.target.value})
     }

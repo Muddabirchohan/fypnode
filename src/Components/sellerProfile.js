@@ -17,13 +17,11 @@ import Slider3 from './slider3';
 
     componentDidMount(){
         
-<<<<<<< HEAD
-        const {id} = this.props.match.params;
-        console.log("id",id);
-=======
         const { id } = this.props.match.params;
+        const {isLoggedIn} = this.props.match.params;
+        console.log("isLoggedIn",isLoggedIn);
         
->>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
+
         axios.get(`http://localhost:7000/sellers/${id}`)
         .then(res =>{
             console.log(res.data);
@@ -31,15 +29,6 @@ import Slider3 from './slider3';
             console.log("users",user)
             this.setState({ sellerProfile: user });
         })
-
-//         fetch(`http://localhost:7000/sellers/${id}`,{  credentials: 'include' })
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(myJson) {
-//     console.log(JSON.stringify(myJson));
-//     this.setState({ sellerProfile: myJson });
-//   });
     }
 
 render(){
@@ -50,7 +39,7 @@ render(){
        <Grid>
   <Row>
 
-    <Col xs={4} sm ={12} md={4} lg={4}>
+    <Col xs={12} sm ={6} md={4} lg={4}>
     <Card >
       <CardActionArea>
         <CardContent >
@@ -66,8 +55,7 @@ render(){
     </Card>
     </Col>
     
-    
-    <Col xs={4} sm ={12} md={4} lg={8}> 
+    <Col xs={12} sm ={6} md={4} lg={8}> 
     <Card >
       <CardActionArea>
         <CardContent >
@@ -75,7 +63,7 @@ render(){
 
             <h1> Wellcome {sellerProfile.name} </h1>
             <h4> Add Post </h4> 
-            <Link to="/postproducts"> Add post </Link> 
+            <Link to={`/postproducts/${sellerProfile._id}`}> Add post </Link> 
             </div>
         </CardContent>
       </CardActionArea>

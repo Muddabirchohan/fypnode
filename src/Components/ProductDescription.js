@@ -7,7 +7,13 @@ import productdescription from '../../src/assets/productdescription.jpg';
 import Header2 from './Header2';
 import '../App.css';
 import Slider3 from './slider3';
-export default class ProductDescription extends Component {
+import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addToCart } from '../actions/PostActions';
+
+
+
+ class ProductDescription extends Component {
     constructor(){
         super();
         this.state = {
@@ -16,29 +22,23 @@ export default class ProductDescription extends Component {
     }
 
     componentDidMount(){
-    // var url = "http://localhost:7000/products/5bfbc91839d2532708fe0ecd";
 
-
-        // var url = new URL("http://localhost:7000/products/5bfbc91839d2532708fe0ecd");
-        // params ={param: this.props.match.params.myid};
-
-// fetch(url, {param: this.props.match.params.myid}).then(res => res.json())
-// .then(response => console.log('Success:', JSON.stringify(response)))
-// .catch(error => console.error('Error:', error));
         axios.get(`http://localhost:7000/products/${this.props.match.params.myid}`)
         .then(res => {
           const products = res.data;
           console.log(products);
           this.setState({ products });
         })
-//         fetch('http://localhost:7000/products/' + this.props.match.params.myid)
-//   .then(function(response) {
-//     return response;
-//   })
-//   .then(function(myJson) {
-//     console.log(JSON.stringify(myJson));
-//   })
     }
+
+    addCart(obj, _id){
+      let {addedIds, addToCart} = this.props;
+       if(addedIds.includes(_id)){
+           alert('already exist')
+       }else addToCart(obj, _id)
+    }
+    
+
     render(){
         const {products} = this.state;
         return(
@@ -47,7 +47,7 @@ export default class ProductDescription extends Component {
                <Grid>
   <Row>
 
-    <Col xs={4} sm ={12} md={4} lg={8}>
+    <Col xs={12} sm ={12} md={4} lg={8}>
     <Card >
       <CardActionArea>
         <CardContent>
@@ -60,18 +60,13 @@ export default class ProductDescription extends Component {
     </Col>
     
     
-    <Col xs={4} sm ={12} md={4} lg={4}> 
+    <Col xs={12} sm ={12} md={4} lg={4}> 
     
     <Card >
       <CardActionArea>
         <CardContent >
               <div className="icons">
-            
-            <p> name    :   {products.pname} </p> 
-            <p> category :   {products.category} </p> 
-            <p> cost   :   {products.cost} </p> 
-            <p> demovideo   :   {products.demoVideoUrl}</p>            <p> exeurl   :   {products.exeUrl}</p>
-            
+              <h1> cost   :   {products.cost} Rs </h1> 
             <div className="centerCart"> 
             <br/><br/>
     
@@ -90,12 +85,7 @@ export default class ProductDescription extends Component {
         <CardContent >
               <div className="icons">
             <h2> Seller Profile</h2>
-            <p> name      :   </p> 
-            <p> category  :    </p> 
-            <p> cost      :    </p> 
-            <p> demovideo :   </p>
-            <p> exeurl    :  </p>
-            
+            <p> Seller Id : {products.seller_id}   </p> 
             <div className="centerCart"> 
             <br/><br/>
 
@@ -108,11 +98,33 @@ export default class ProductDescription extends Component {
     </Card>
     </Col>
     </Row>
+
+
+    <div> 
+    <Card>
+      <h1> DETAILS </h1> <hr/>
+      <br/>  <br/> 
+                  <h4> name    :   {products.pname} </h4> 
+            <h4> category :   {products.category} </h4> 
+            <h4> demovideo   :   {products.demoVideoUrl}</h4>     
+            <h4> exeurl   :   {products.exeUrl}</h4>
+            <br/>  <br/> 
+     <h1> DESCRIPTION </h1> <hr/>    
+     <br/>  <br/> 
+   <h4> {products.pdescription} </h4>  
+   <Button variant="contained" color="primary" onClick={()=> this.addCart(products,products._id)}> Add <i class="fas fa-cart-plus"></i> </Button> 
+
+            </Card >
+      </div>
 </Grid>
-
-
             </div> 
         )
     }
 }
 
+const mapStateToProps = (state,dispatch) => ({
+  cart: state.posts.cart,
+  addedIds: state.posts.addedIds,
+})
+
+export default connect(mapStateToProps, {addToCart})(ProductDescription);

@@ -149,7 +149,7 @@ componentWillMount() {
                             <Button  bsStyle="success" type="submit" onClick={this.Postdata.bind(this)}>Sign in</Button>
                         </Col>
                     </FormGroup>
-                    <Link to="/"> already have an account? login  </Link>
+                    <Link to="/" > already have an account? login  </Link>
                 </Form>
             </div>
             </Card>

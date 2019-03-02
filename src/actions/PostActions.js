@@ -21,23 +21,21 @@ export const sellerlogin = () => dispatch => {
 }
 
 
-export const getSingleProduct = (obj) => dispatch => {
+export const getSingleProduct = (id) => dispatch => {
 
     fetch(`http://localhost:7000/products/${id}`)
     .then(res => res.json())
     .then(pro => dispatch({
         type: GET_SINGLE_PRODUCT,
-<<<<<<< HEAD
         payload: pro
     }))
     // dispatch({
     //     type: GET_SINGLE_PRODUCT,
     //     obj: id
     // })
-=======
-        obj: obj
-    })
->>>>>>> 372679a2a76a201049044f6f61cbd814b3e817dd
+
+        // obj: obj
+
 }
 
 

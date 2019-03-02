@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {Table,Button} from 'react-bootstrap';
+import {Table,Button,Grid,Col,Row} from 'react-bootstrap';
 import { removeFromCart } from '../actions/PostActions';
 import { number } from 'prop-types';
 import Slider3 from './slider3';
-
+import Card from '@material-ui/core/Card';
 
 
 class Cart extends Component {
@@ -16,7 +16,8 @@ constructor(props){
   });
 this.state ={
   value: '',
-  netAmountArray: array
+  netAmountArray: array,
+  setInvoice: false
 }
 this.handleChange = this.handleChange.bind(this)
 }
@@ -46,14 +47,30 @@ this.handleChange = this.handleChange.bind(this)
     this.props.removeFromCart(event.target.id);
   }
   
+
+  generateInvoice(){
+this.setState({ setInvoice: !this.state.setInvoice})
+  }
+
+
+componentWillMount(){
+  if(this.props.cart.length===0){
+    alert("cart empty");
+    this.props.history.push('/')
+  }
+}
+
   render() {
     var count = 0, temp = 0;
     const totalPrice = this.state.netAmountArray.map(elm=>(
       temp+=elm
     ));
-    console.log("hello" ,this.props.cart)
-    return (
-      <div>
+  
+
+        return (
+
+    <div>
+    {this.props.cart!==0 && <div>
         <Slider3/>
       
         <Table responsive>
@@ -61,7 +78,6 @@ this.handleChange = this.handleChange.bind(this)
     <tr>
        <th>Id</th>
       <th>Name</th>
-      <th>Description </th>
       <th>Cost</th>
       <th>Category</th>
       <th>quantity</th>
@@ -77,7 +93,6 @@ this.handleChange = this.handleChange.bind(this)
        <tr>
             <td> {obj._id} </td> 
          <td> {obj.pname} </td> 
-         <td> {obj.pdescription} </td> 
          <td> {obj.cost} </td>  
          <td> {obj.category} </td> 
          <td> <input type="number" id={index} onChange={this.handleChange}/> </td> 
@@ -87,15 +102,44 @@ this.handleChange = this.handleChange.bind(this)
      )
    })}
   
-     <div style={{textAlign: 'center'}}>
+     {/* <div style={{textAlign: 'center'}}>
        <h3> Total Price </h3>
        <h5> {totalPrice[(totalPrice.length)-1]} </h5>
-     </div>
+     </div> */}
   
   </tbody>
+    {/* {this.props.cart.length!==0 && <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button> } */}
+    <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button>
+
 </Table>
+
+
+{this.state.setInvoice &&
+<div> 
+  <Card className="invoice">
+<h3> Invoice </h3>
+<Grid>
+  
+  {this.props.cart.map((obj,index)=>{
+     return(
+      <Row>
+         <Col>  {obj.pname} </Col> 
+         <Col> {obj.cost} </Col>          
+          <Col> {this.state.netAmountArray[index]}</Col> 
+          </Row>
+     )
+   })}
+ 
+   </Grid>
+
+     <p> total : {totalPrice[(totalPrice.length)-1]} </p>
+     </Card>
+</div>
+
+}
       </div>
-                       
+}
+</div>         
     )
   }
 }
