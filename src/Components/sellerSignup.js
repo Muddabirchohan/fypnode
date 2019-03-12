@@ -94,7 +94,7 @@ componentWillMount() {
                 <Card className="post-product">
                 <h2> S-BAY </h2>
                 <form onSubmit={this.Postdata} method="post">
-  <div class="form-group">
+  <div class="form-group seller-sign">
     <label for="name">name</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" onChange={this.getName}/>
   </div>

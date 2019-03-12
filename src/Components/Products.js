@@ -88,7 +88,7 @@ addCart(obj, _id){
       <CardActionArea>
         <CardContent>
             <div>
-            <img src={product} alt="profile" width="150" height="150"/>
+            <img src={obj.screenShot[0]} alt="profile" width="150" height="150"/>
 <p> <h5> <b> {obj.pname}</b> </h5> </p>
 <p> <h5>  {obj.cost}  </h5> </p>
 
@@ -96,15 +96,10 @@ addCart(obj, _id){
   </CardContent>
         </CardActionArea>
         </Link> 
-        <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> Add <i class="fas fa-cart-plus"></i> </Button> 
-          
-  
+        <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> Add <i class="fas fa-cart-plus"></i> </Button>   
     </Card>
 
-   
     </div> 
-
-
 </div> 
          )      
      })}  

@@ -37,7 +37,7 @@ axios.get(`http://localhost:7000/products/ecommerce`)
           return(
         <Card style={{width: '300px', height: '200px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
         <div> 
-        <img src={ecommerce} alt="ecommerce" weight="300px" height="100px"/>
+        <img src={obj.screenShot[0]} alt="ecommerce" weight="300px" height="100px"/>
         <p> {obj.pname} </p>
         <p> {obj.category} </p>    
         <p> {obj.demoVideoUrl} </p>   

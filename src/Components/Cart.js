@@ -76,7 +76,7 @@ componentWillMount(){
         <Table responsive>
   <thead>
     <tr>
-       <th>Id</th>
+     
       <th>Name</th>
       <th>Cost</th>
       <th>Category</th>
@@ -91,10 +91,10 @@ componentWillMount(){
    {this.props.cart.map((obj,index)=>{
      return(
        <tr>
-            <td> {obj._id} </td> 
+        
+        <td> <img src={obj.screenShot} height="100px"/></td> 
          <td> {obj.pname} </td> 
          <td> {obj.cost} </td>  
-         <td> {obj.category} </td> 
          <td> <input type="number" id={index} onChange={this.handleChange}/> </td> 
          <td> {this.state.netAmountArray[index]}</td> 
          <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> 

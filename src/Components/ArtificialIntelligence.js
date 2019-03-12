@@ -80,7 +80,7 @@ axios.get(`http://localhost:7000/products/ai`)
         <Card style={{textAlign: 'center', width: '300px', height: '200px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
         <div> 
        
-        <img src={ai} alt="ai" weight="300px" height="100px"/>
+        <img src={ai.screenShot} alt="ai" weight="300px" height="100px"/>
               <p> {obj.pname} </p>
               <p> {obj.category} </p>
               <p> {obj.demoVideoUrl} </p>   

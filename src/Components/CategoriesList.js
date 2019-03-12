@@ -27,7 +27,7 @@ export default class CategoriesList extends Component {
         />
         <CardContent >
             <div className="icons">
-            <i class="fas fa-mobile-alt"></i> 
+            <i class="fas fa-mobile-alt fa-3x" ></i> 
             <p> Mobile App</p> 
             </div>
         </CardContent>
@@ -54,7 +54,7 @@ export default class CategoriesList extends Component {
         <CardContent>
 
   <div className="icons">
-      <i class="fab fa-chrome"></i>
+      <i class="fab fa-chrome fa-3x"></i>
       
       <p> Web Apps </p> 
       </div>
@@ -81,7 +81,7 @@ export default class CategoriesList extends Component {
         <CardContent>
        
         <div className="icons">
-        <i class="fas fa-vr-cardboard"></i>
+        <i class="fas fa-vr-cardboard fa-3x"></i>
         <p> VR/AR </p> 
         </div>
         </CardContent>
@@ -114,7 +114,7 @@ export default class CategoriesList extends Component {
         <CardContent>
        
         <div className="icons">
-        <i class="fas fa-brain"></i>
+        <i class="fas fa-brain fa-3x"></i>
         <p> AI</p> 
         </div>
         </CardContent>
@@ -140,7 +140,7 @@ export default class CategoriesList extends Component {
         <CardContent>
        
         <div className="icons">
-        <i class="fas fa-cart-plus"></i>
+        <i class="fas fa-cart-plus fa-3x"></i>
         <p> Ecommerce </p> 
         </div>
 
@@ -164,7 +164,7 @@ export default class CategoriesList extends Component {
         />
         <CardContent>
         <div className="icons">
-        <i class="fas fa-code-branch"></i>
+        <i class="fas fa-code-branch fa-3x"></i>
         <p> IOT </p> 
         </div>
         </CardContent>

@@ -6,6 +6,7 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import productdescription from '../../src/assets/productdescription.jpg';
 import Header2 from './Header2';
 import '../App.css';
+import '../index.css';
 import Slider3 from './slider3';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,8 +15,8 @@ import { addToCart } from '../actions/PostActions';
 
 
  class ProductDescription extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             products: []
         }
@@ -26,7 +27,7 @@ import { addToCart } from '../actions/PostActions';
         axios.get(`http://localhost:7000/products/${this.props.match.params.myid}`)
         .then(res => {
           const products = res.data;
-          console.log(products);
+          console.log("screnshit",products);
           this.setState({ products });
         })
     }
@@ -51,8 +52,8 @@ import { addToCart } from '../actions/PostActions';
     <Card >
       <CardActionArea>
         <CardContent>
-            <div>
-<img src={productdescription} alt="description"/>
+            <div >
+<img src={products.screenShot} alt="description" style={{display: 'block',marginLeft: 'auto',marginRight: 'auto'}}/>
             </div>
         </CardContent>
       </CardActionArea>
@@ -100,8 +101,12 @@ import { addToCart } from '../actions/PostActions';
     </Row>
 
 
-    <div> 
-    <Card>
+<Row> 
+
+<Col xs={12} sm ={12} md={4} lg={8}>
+
+<div> 
+    <Card className="productDescription">
       <h1> DETAILS </h1> <hr/>
       <br/>  <br/> 
                   <h4> name    :   {products.pname} </h4> 
@@ -112,10 +117,19 @@ import { addToCart } from '../actions/PostActions';
      <h1> DESCRIPTION </h1> <hr/>    
      <br/>  <br/> 
    <h4> {products.pdescription} </h4>  
-   <Button variant="contained" color="primary" onClick={()=> this.addCart(products,products._id)}> Add <i class="fas fa-cart-plus"></i> </Button> 
-
+ 
             </Card >
       </div>
+ </Col>
+  
+<Col xs={12} sm ={12} md={4} lg={4} className="productDescription">
+<Button variant="contained" color="primary" onClick={()=> this.addCart(products,products._id)}> Add To Cart <i class="fas fa-cart-plus"></i> </Button> 
+
+ </Col>
+ 
+
+</Row>
+ 
 </Grid>
             </div> 
         )

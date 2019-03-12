@@ -19,9 +19,8 @@ constructor(){
         users: [],
         password: '',
         email: '',
-        activeUser: {},
-        isLoggedIn: false
-    }
+        activeUser: {}
+          }
     this.gotoLogin = this.gotoLogin.bind(this);
     this.getEmail = this.getEmail.bind(this);
     this.getPassword = this.getPassword.bind(this);
@@ -50,8 +49,7 @@ componentDidMount() {
     .then(res => {
       console.log(res.data);
         if(res.data.userStatus === "exist"){
-          this.setState({isLoggedIn: !this.state.isLoggedIn})
-        this.props.history.push(`/sellerProfile/${res.data.user._id}/${this.state.isLoggedIn}`);
+        this.props.history.push(`/sellerProfile/${res.data.user._id}`);
         }
         else{
             alert("authentication failed");

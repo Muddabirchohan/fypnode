@@ -1,13 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -138,8 +128,69 @@ footer{
 
 
 
-@media (min-width:992px ) and (max-width: 1200px) {
+@media (min-width:992px ) and (max-width: 1500px) {
   .invoice{
     width: 300px;
   }
+
+  .d-block{
+    height: 50% !important;
+    width: 100% !important;
+  }
+
+  .carousel{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 30%;
+  }
+
+  .carousel img{
+   height: 30%;
+   widows: 50%;
+  }
+
+  .productDescription h1,h4{
+      text-align: center;
+  }
+
+  .productDescription Button{
+   width: 100%;
+}
+
+.new-pro h3{
+  text-align: center;
+}
+
+.container p{
+ font-size: 20px;
+  }
+
+.container{
+  text-align: center;
+}
+
+.form-elements{
+  display: inline;
+}
+  .form-control{
+ 
+    width: 300px !important;
+    height: 50px !important;
+  }
+  
+select {
+  width: 200px !important;
+  height: 50px !important;
+}
+
+.form-control,select{
+  display: inline !important;
+}
+
+
+/* .productDescription h4{
+    margin-left: 30px;
+  } */
 }

@@ -7,6 +7,9 @@ import Slider3 from './slider3';
 
 
 
+const myurl = this;
+
+
  class PostProduct extends Component{
    constructor(){
      super();
@@ -19,12 +22,16 @@ import Slider3 from './slider3';
         exeUrl: '',
         hostUrl: '',
         cost: '',
-        screenShot: ''
+        screenShot: [],
+        val: ''
      }
      this.postProduct = this.postProduct.bind(this);
    }
 
 
+ 
+    
+ 
    postProduct(e){
      e.preventDefault();
       console.log("success",e);
@@ -81,17 +88,33 @@ import Slider3 from './slider3';
     this.setState({hostUrl: e.target.value});
   }
 
-  getScreenShot(e){
-    this.setState({screenShot: e.target.value});
-  }
-  
   getCategory(e){
     console.log(e.target.value);
     this.setState({category: e.target.value});
-
   }
 
+ getScreenShot(event){
 
+  var CLOUDINARY_URL ="https://api.cloudinary.com/v1_1/chohan/upload";
+  var CLOUDINARY_UPLOAD_PRESET="bhorijjp";
+
+var file = event.target.files[0];
+var formData = new FormData();
+formData.append('file',file);
+formData.append('upload_preset',CLOUDINARY_UPLOAD_PRESET);
+
+axios({
+url: CLOUDINARY_URL,
+method: 'POST',
+data: formData
+}).then(res => {
+console.log("my response",res);
+this.setState({ screenShot: res.data.secure_url})
+}).catch(function(err){
+console.log(err)
+})
+
+}
 
     render(){
         return(
@@ -128,11 +151,12 @@ import Slider3 from './slider3';
   </div>
   <div class="form-group">
     <label for="screenShot">screenShot:</label>
-    <input type="file" class="form-control" id="screenShot" onChange={this.getScreenShot.bind(this)}/>
+    <input type="file" class="form-control"  onChange={this.getScreenShot.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="category">category:</label>
+    <label for="category">category:</label> <br/>
     <select onChange={this.getCategory.bind(this)}> 
+    <option value=""> Select a Category </option>
         <option value="webapp"> web app </option>
         <option value="mobileapp"> mobile app </option>
         <option value="vr/ar"> vr/ar </option>

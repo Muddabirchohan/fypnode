@@ -6,6 +6,8 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import profile from '../../src/assets/profile.jpg';
 import Header2 from './Header2';
 import Slider3 from './slider3';
+
+
  class sellerProfile extends Component{
 
     constructor(){
@@ -18,9 +20,7 @@ import Slider3 from './slider3';
     componentDidMount(){
         
         const { id } = this.props.match.params;
-        const {isLoggedIn} = this.props.match.params;
-        console.log("isLoggedIn",isLoggedIn);
-        
+       
 
         axios.get(`http://localhost:7000/sellers/${id}`)
         .then(res =>{
@@ -28,8 +28,10 @@ import Slider3 from './slider3';
             const user = res.data;
             console.log("users",user)
             this.setState({ sellerProfile: user });
-        })
+        })  
     }
+
+
 
 render(){
     const {sellerProfile} = this.state;
@@ -40,11 +42,12 @@ render(){
   <Row>
 
     <Col xs={12} sm ={6} md={4} lg={4}>
-    <Card >
+    <Card>
+    {/* <input id="file-upload" type="file" /> */}
       <CardActionArea>
-        <CardContent >
+        <CardContent>
             <div className="icons">
-            <img src={profile} alt="user"/>
+            <img src="http://fillmurray.com/g/300/300" alt="user" id='image-preview'/>
             <p> name    :   {sellerProfile.name} </p> 
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
