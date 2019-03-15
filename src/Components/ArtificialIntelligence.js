@@ -5,6 +5,7 @@ import Header2 from './Header2';
 import ai from '../../src/assets/ai.jpg';
 import Slider3 from './slider3';
 import {Carousel} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 
 export default class InternetOfThings extends Component {
@@ -87,7 +88,8 @@ axios.get(`http://localhost:7000/products/ai`)
               <p> {obj.hostUrl} </p>   
               <p> {obj.exeUrl} </p>   
               <p> {obj.cost} </p>   
-              
+              <p> <Link to={`/productDescription/${obj._id}` }> desc </Link></p>  
+
             </div>
             </Card>
           )

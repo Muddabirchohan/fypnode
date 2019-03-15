@@ -51,6 +51,7 @@ componentDidMount() {
         if(res.data.userStatus === "exist"){
         this.props.history.push(`/sellerProfile/${res.data.user._id}`);
         }
+      
         else{
             alert("authentication failed");
         }

@@ -76,10 +76,9 @@ componentWillMount(){
         <Table responsive>
   <thead>
     <tr>
-     
+    <th>Image</th>
       <th>Name</th>
       <th>Cost</th>
-      <th>Category</th>
       <th>quantity</th>
       <th>total cost</th>
       <th>Remove</th>

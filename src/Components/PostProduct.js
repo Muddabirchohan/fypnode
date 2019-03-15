@@ -116,7 +116,12 @@ console.log(err)
 
 }
 
+componentWillUnmount(){
+
+}
+
     render(){
+      console.log(this.state.screenShot)
         return(
             <div>
               <Slider3/>
@@ -157,7 +162,7 @@ console.log(err)
     <label for="category">category:</label> <br/>
     <select onChange={this.getCategory.bind(this)}> 
     <option value=""> Select a Category </option>
-        <option value="webapp"> web app </option>
+        <option value="web"> web app </option>
         <option value="mobileapp"> mobile app </option>
         <option value="vr/ar"> vr/ar </option>
         <option value="ai"> ai </option>
@@ -170,8 +175,8 @@ console.log(err)
   <div class="checkbox form-group">
     <label><input type="checkbox"/> Remember me</label>
   </div>
-  <button type="submit" class="btn btn-primary ">Submit</button>
 
+{this.state.screenShot!= '' && <button type="submit" class="btn btn-primary ">Submit</button>}
 </form>
 </Card>
                  </div>
