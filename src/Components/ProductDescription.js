@@ -123,7 +123,7 @@ import { addToCart } from '../actions/PostActions';
  </Col>
   
 <Col xs={12} sm ={12} md={4} lg={4} className="productDescription">
-<Button variant="contained" color="primary" onClick={()=> this.addCart(products,products._id)}> Add To Cart <i class="fas fa-cart-plus"></i> </Button> 
+<Button variant="contained" color="primary"  style={{width: '100%'}} onClick={()=> this.addCart(products,products._id)}> Add To Cart <i class="fas fa-cart-plus"></i> </Button> 
 
  </Col>
  
