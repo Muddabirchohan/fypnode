@@ -116,6 +116,11 @@ code {
   width: 280px !important;
 }
 
+/* .bg-seller-login{
+  background-image: url('./assets//bulb.jpg');
+  background-size: contain;
+} */
+
 footer{
   display:none !important; 
 }
@@ -125,7 +130,6 @@ footer{
 @media (min-width:768px ) and (max-width: 991px) {
 
 }
-
 
 
 @media (min-width:992px ) and (max-width: 1500px) {
@@ -150,7 +154,7 @@ footer{
    height: 30%;
    widows: 50%;
   }
-
+  
   .productDescription h1,h4{
       text-align: center;
   }
@@ -194,4 +198,20 @@ select {
 /* .productDescription h4{
     margin-left: 30px;
   } */
+}
+
+
+.email-field{
+  width: 80% !important;
+}
+
+
+.bg-seller-login{
+  margin-top: 40px !important;
+  background-color: cadetblue;
+}
+
+.imglogin {
+  margin-left: '400px' !important;
+  margin-right: '300px' !important;
 }

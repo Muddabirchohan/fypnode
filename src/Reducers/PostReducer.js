@@ -49,11 +49,21 @@ export default function (state = initialState, action) {
                             return elm;
                         }
                     });
+                    var myids = state.addedIds.map(obj=>{
+                       
+                        if(obj !== action.productID){
+                            return obj;
+                        }
+                    });
+                   
                     newCart = newCart.filter(elm=> elm !== undefined);
+                    myids = myids.filter(elm=> elm !== undefined);
+                    
                     
                     return {
                     ...state,
-                    cart: newCart
+                    cart: newCart,
+                    addedIds: myids
                 }}
         //      {
         //         var newCart = state.cart.filter(item => item !== action.object),

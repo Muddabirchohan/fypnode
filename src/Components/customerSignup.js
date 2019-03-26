@@ -52,7 +52,7 @@ componentWillMount() {
       });
 
 
-      if(this.state.cname === "" && this.state.email === "" && this.state.contact === "" && this.state.address === "" && this.state.password === "" ){
+      if(this.state.name === "" && this.state.email === "" && this.state.contact === "" && this.state.address === "" && this.state.password === "" ){
           alert('fields missing')
       }
       else{

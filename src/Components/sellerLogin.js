@@ -5,6 +5,9 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Slider3 from './slider3';
+import auth from './Auth';
+import profile from '../../src/assets/profile.jpg';
+
 
 var header = {
     'Content-Type': 'application/json',
@@ -13,8 +16,8 @@ var header = {
 }
 
 class Login extends Component {
-constructor(){
-    super();
+constructor(props){
+    super(props);
     this.state = {
         users: [],
         password: '',
@@ -49,9 +52,14 @@ componentDidMount() {
     .then(res => {
       console.log(res.data);
         if(res.data.userStatus === "exist"){
-        this.props.history.push(`/sellerProfile/${res.data.user._id}`);
+          // auth.login(()=>{
+          //   this.props.history.push(`/sellerProfile/${res.data.user._id}`);
+          // })
+          this.props.history.push(`/sellerProfile/${res.data.user._id}`);
         }
-      
+      // else if (this.state.users.map(obj=>obj.id !== res.data.user._id{
+      // alert("not found");
+      // }
         else{
             alert("authentication failed");
         }
@@ -68,21 +76,36 @@ componentDidMount() {
     render() {
         console.log(this.state.users)
         return (
-            <div>
-           
-           <Slider3/>
-           <Card className="login-seller">
-                <h2> S-BAY </h2>
+            <div className="bg-seller-login">
+            <Slider3/>
+                 <Grid>
+  <Card style={{height: '600px'}}>
+  <Row style={{paddingTop: '200px'}}>
+    {/* <Col xs={12} sm ={12} md={4} lg={6}>
+<img src={profile} width="300px" height="200px" style={{float: 'right'}} />
+    </Col> */}
+
+     <Col xs={12} sm ={12} md={4} lg={12}>
+     <div style={{marginLeft: '400px',marginRight: '300px'}}>
+     <img src="http://fillmurray.com/g/300/300" alt="user" id='image-preview' height="200px"/>
+    </div>
+    </Col> 
+     
+    <Col xs={12} sm ={12} md={4} lg={12}>
+    {/* <h2 > MEMBER LOGIN </h2> */}
+
+    <Card style={{marginLeft: '300px',marginRight: '350px'}}>
+             
                 <form onSubmit={this.gotoLogin} method="post">
 
-  <div class="form-group">
+  <div class="form-group" >
     <label for="email">email</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.getEmail}/>
+    <input type="email" class="form-control email-field" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.getEmail}/>
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.getPassword}/>
+    <input type="password" class="form-control email-field" id="exampleInputPassword1" placeholder="Password" onChange={this.getPassword}/>
   </div>
   <button class="btn btn-primary">Login </button>
   <span>
@@ -90,6 +113,13 @@ componentDidMount() {
   </span>
 </form>
 </Card>
+    </Col>
+
+    
+    </Row>
+    </Card>
+    </Grid>
+          
             </div>
         );
     }

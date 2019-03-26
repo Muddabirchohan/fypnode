@@ -52,6 +52,8 @@ render(){
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
             <p> Contact :   {sellerProfile.contact} </p> 
+            <Link to={`/sellerProducts/${sellerProfile._id}`}> my producst </Link>
+
             </div>
         </CardContent>
       </CardActionArea>

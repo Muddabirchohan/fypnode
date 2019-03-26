@@ -4,6 +4,8 @@ import product from '../../src/assets/product.jpg';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchproducts,addToCart } from '../actions/PostActions';
+import Loader from 'react-loader-spinner';
+import axios from 'axios';
 
  class Products extends Component {
   
@@ -71,13 +73,16 @@ addCart(obj, _id){
   //   console.log(this.state.cart);
   // }
     render() {
-    // console.log(this.state.products)
+     console.log("hello" ,this.props.products)
+    
         return (
+
+     
       <div  className="cardAllign" id="products">
+          
+       
               {
-          this.props.products === undefined ? 
-          <i class="fas fa-spinner fa-spin fa-4x"></i> : 
-          this.props.products.map((obj)=>{
+                 this.props.products.map((obj)=>{
           return(
       <div key={obj._id}>
     
@@ -88,7 +93,7 @@ addCart(obj, _id){
       <CardActionArea>
         <CardContent>
             <div>
-            <img src={obj.screenShot[0]} alt="profile" width="150" height="150"/>
+            <img src={obj.screenShot} alt="profile" width="150" height="150"/>
 <p> <h5> <b> {obj.pname}</b> </h5> </p>
 <p> <h5>  {obj.cost}  </h5> </p>
 

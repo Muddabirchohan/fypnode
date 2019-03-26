@@ -21,6 +21,8 @@ import CustomerRegistartion from './Components/CustomerRegistration';
 import requireAuth from './Components/Authentication';
 import NewProductRequest from './Components/NewProductRequest';
 import AdminPanel from './Components/AdminPanel';
+import sellerProducts from './Components/SellerProducts';
+import {ProtectedRoutes} from './Components/ProtectedRoutes';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -29,6 +31,7 @@ export default class RoutersComponent extends Component {
         <BrowserRouter>
         <Switch>
         <Route exact={true} path="/" component={App}/>   
+        {/* <ProtectedRoutes exact path="/sellerLogin" component={sellerLogin} /> */}
         <Route  path="/mobileapp" component={MobileApp}/>    
         <Route  path="/webapp" component={WebApp}/>  
         <Route  path="/vrar" component={VrAr}/>  
@@ -49,7 +52,11 @@ export default class RoutersComponent extends Component {
         <Route path="/postproducts/:proid" component={PostProduct}/> 
         <Route path="/customerSighnup" component={CustomerRegistartion}/> 
         <Route path="/newProductRequest/:cusNewReqId" component={NewProductRequest}/> 
+        <Route path="/sellerProducts/:spid" component={sellerProducts}/> 
+        
         <Route path="/admin" component={AdminPanel}/> 
+        {/* <Route path="*" component={()=> "404 not found"}/>  */}
+
         </Switch>
         </BrowserRouter>
       </div>

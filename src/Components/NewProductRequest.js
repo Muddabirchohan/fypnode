@@ -45,7 +45,7 @@ var customerNewRequest = {
 }
 
     render(){
-        console.log("customer", this.props.match.params.cusNewReqId,"product",this.props.match.params.productId)
+        // console.log("customer", this.props.match.params.cusNewReqId,"product",this.props.match.params.productId)
     return(
         <div className="newpro">
 <Slider3/>

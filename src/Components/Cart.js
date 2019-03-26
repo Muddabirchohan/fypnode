@@ -5,7 +5,7 @@ import { removeFromCart } from '../actions/PostActions';
 import { number } from 'prop-types';
 import Slider3 from './slider3';
 import Card from '@material-ui/core/Card';
-
+import {withRouter} from 'react-router';
 
 class Cart extends Component {
 constructor(props){
@@ -17,9 +17,10 @@ constructor(props){
 this.state ={
   value: '',
   netAmountArray: array,
-  setInvoice: false
+  setInvoice: false,
+  total: ''
 }
-this.handleChange = this.handleChange.bind(this)
+this.handleChange = this.handleChange.bind(this);
 }
 
   componentDidMount(){
@@ -56,8 +57,20 @@ this.setState({ setInvoice: !this.state.setInvoice})
 componentWillMount(){
   if(this.props.cart.length===0){
     alert("cart empty");
-    this.props.history.push('/')
+    this.props.history.goBack()
   }
+}
+
+
+componentDidMount()
+{
+  let myarray= [];
+ var total =  this.props.cart.map((obj)=>{
+  myarray.push(obj.cost)
+    this.setState({ total:myarray})
+  })
+  console.log(this.state.total)
+
 }
 
   render() {
@@ -78,9 +91,7 @@ componentWillMount(){
     <tr>
     <th>Image</th>
       <th>Name</th>
-      <th>Cost</th>
-      <th>quantity</th>
-      <th>total cost</th>
+      <th>cost</th>
       <th>Remove</th>
       
     </tr>
@@ -93,9 +104,9 @@ componentWillMount(){
         
         <td> <img src={obj.screenShot} height="100px"/></td> 
          <td> {obj.pname} </td> 
-         <td> {obj.cost} </td>  
-         <td> <input type="number" id={index} onChange={this.handleChange}/> </td> 
-         <td> {this.state.netAmountArray[index]}</td> 
+         {/* <td> <input type="number" id={index} onChange={this.handleChange}/> </td> 
+         <td> {this.state.netAmountArray[index]}</td>  */}
+         <td> {obj.cost} </td>
          <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> 
        </tr> 
      )
@@ -107,6 +118,8 @@ componentWillMount(){
      </div> */}
   
   </tbody>
+
+  {this.state.total}
     {/* {this.props.cart.length!==0 && <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button> } */}
     <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button>
 
@@ -151,4 +164,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{removeFromCart})(Cart);
+export default connect(mapStateToProps,{removeFromCart})(withRouter(Cart));

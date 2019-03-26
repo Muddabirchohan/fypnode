@@ -6,10 +6,6 @@ import {Link} from 'react-router-dom';
 import Slider3 from './slider3';
 
 
-
-const myurl = this;
-
-
  class PostProduct extends Component{
    constructor(){
      super();
@@ -52,7 +48,7 @@ const myurl = this;
         console.log("posted product",res.data);
       });
 
-      if(this.state.pname === "" && this.state.pdescription === ""  && this.state.exeUrl === "" && this.state.demovideourl === "" && this.state.hostUrl === "" && this.state.cost === "" && this.state.category === ""){
+      if(this.state.pname === "" && this.state.screenShot === "" && this.state.pdescription === ""  && this.state.exeUrl === "" && this.state.demovideourl === "" && this.state.hostUrl === "" && this.state.cost === "" && this.state.category === ""){
           alert('fields missing')
       }
       else{
@@ -164,7 +160,8 @@ componentWillUnmount(){
     <option value=""> Select a Category </option>
         <option value="web"> web app </option>
         <option value="mobileapp"> mobile app </option>
-        <option value="vr/ar"> vr/ar </option>
+        <option value="vr"> vr </option>
+        <option value="ar"> ar </option>
         <option value="ai"> ai </option>
         <option value="ecommerce"> ecommerce </option>
         <option value="iot"> iot </option>

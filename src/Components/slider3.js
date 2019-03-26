@@ -34,7 +34,8 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
           <h1 style={{paddingTop: '15px',color: 'white',fontFamily:'fantasy'}}> S-BAY </h1>
           
     <div className="left" style={{paddingTop: '10px'}}>
-      
+    <Link to="/customerLogin" className="link" > Buy  </Link>
+
     </div>
 
     <div className="right" style={{paddingTop: '10px'}}>
