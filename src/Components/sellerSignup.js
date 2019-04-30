@@ -5,11 +5,11 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Slider3 from './slider3';
-
+import auth from "./Auth";
 
 class sellerSignup extends Component {
-constructor(){
-    super();
+constructor(props){
+    super(props);
 
     this.state = {
         users: [],
@@ -17,7 +17,8 @@ constructor(){
         email: '',
         name: '',
         contact: '',
-        address: ''
+        address: '',
+        image: ''
     }
     // this.gotoLogin = this.gotoLogin.bind(this);
     this.getEmail = this.getEmail.bind(this);
@@ -45,7 +46,10 @@ componentWillMount() {
       email: this.state.email,
       password: this.state.password,
       contact: this.state.contact,
-      address: this.state.address
+      address: this.state.address,
+      resetPasswordToken: '',
+      resetPasswordExpires: ''
+      // image: this.state.image
     }
 
     axios.post('http://localhost:7000/sellers/postseller', userObject)
@@ -57,8 +61,12 @@ componentWillMount() {
           alert('fields missing')
       }
       else{
-      this.props.history.push('/sellerLogin');
-      }
+      // this.props.history.push('/sellerLogin');
+   
+        auth.login(() => {
+          this.props.history.push("/sellerLogin");
+        });
+    }
       console.log(userObject);
   }
 

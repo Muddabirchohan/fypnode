@@ -37,8 +37,11 @@ axios.get(`http://localhost:7000/products/iot`)
         {this.state.iot.map((obj)=>{
           return(
         <Card style={{width: '300px', height: '300px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
+     
         <div> 
+        <Link to={`/productDescription/${obj._id}` }>
         <img src={obj.screenShot[0]} alt="iot" weight="300px" height="100px"/>
+        </Link>
 
               <p> {obj.pname} </p>
               <p> {obj.category} </p>
@@ -46,9 +49,10 @@ axios.get(`http://localhost:7000/products/iot`)
               <p> {obj.hostUrl} </p>   
               <p> {obj.exeUrl} </p>   
               <p> {obj.cost} </p>   
-              <p> <Link to={`/productDescription/${obj._id}` }> desc </Link></p>  
+              {/* <p> <Link to={`/productDescription/${obj._id}` }> desc </Link></p>   */}
 
             </div>
+       
             </Card>
           )
         })}

@@ -20,8 +20,7 @@ this.state ={
   value: '',
   netAmountArray: array,
   setInvoice: false,
-  total: '',
-  stateChanged: false
+  total: ''
 }
 this.handleChange = this.handleChange.bind(this);
 }
@@ -58,8 +57,9 @@ this.setState({ setInvoice: !this.state.setInvoice})
 
 
 componentWillMount(){
-  if(this.props.cart.length>0){
-   this.setState({ stateChanged: !this.state.stateChanged})
+  if(this.props.cart.length===0){
+    alert("cart empty");
+    this.props.history.goBack()
   }
 }
 
@@ -82,90 +82,55 @@ componentDidMount()
   
 
         return (
-          <div> 
-          <Slider3/>
-    <div id="cart">
-   
-    {this.state.stateChanged && <div>
-    
-        <Table responsive>
-  <thead>
-    <tr>
-    <th> Image</th>
-      <th> Name</th>
-      <th> Quantity </th>
-      <th> Total </th>
-      <th>cost</th>
-      <th>Remove</th>
-    </tr>
-  </thead>
-  <tbody>
-   
-   {this.props.cart.map((obj,index)=>{
-     return(
-       <tr>
-        <td> <img src={obj.screenShot} /></td> 
-         <td> {obj.pname} </td> 
-          <td> <input type="number" id={index} onChange={this.handleChange}/> </td>  
-         <td> {this.state.netAmountArray[index]}</td> 
-         <td> {obj.cost} </td>
-         <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> 
-       </tr> 
-     )
-   })}
-  
-     <div style={{textAlign: 'center'}}>
-       <h3> Total Price </h3>
-       <h5> {totalPrice[(totalPrice.length)-1]} </h5>
-     </div>
-  
-  </tbody>
 
-  {/* {this.state.total} */}
-    {this.props.cart.length!==0 && <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button> }
-    <Button onClick={this.generateInvoice.bind(this)}> Generate Invoice </Button>
-
-</Table>
-
-
-{this.state.setInvoice &&
-<div> 
-  <Card className="invoice">
-<h3> Invoice </h3>
-<Grid>
-  
+    <div>
+     <Grid>
+  <Row>
   {this.props.cart.map((obj,index)=>{
      return(
-      <Row>
-         <Col>  {obj.pname} </Col> 
-         <Col> {obj.cost} </Col>          
-          <Col> {this.state.netAmountArray[index]}</Col> 
-          </Row>
+      <div className="cart2"> 
+<Col xs={12} sm ={12} md={6} lg={2}> 
+<p> 
+<img src={obj.screenShot} height="100px"/>
+    </p>
+    </Col>
+
+    <Col xs={12} sm ={12} md={6} lg={2}> 
+   <p> 
+    {obj.pname} 
+    </p>
+    </Col>
+    
+    <Col xs={12} sm ={12} md={6} lg={2}> 
+    <p> 
+    <input type="number" id={index} onChange={this.handleChange}/>
+    </p> 
+    </Col>
+    
+    <Col xs={12} sm ={12} md={6} lg={2}>
+    <p> 
+    {this.state.netAmountArray[index]}
+    </p> 
+     </Col>
+
+     <Col xs={12} sm ={12} md={6} lg={2}>
+     <p> 
+     {obj.cost}
+     </p> 
+     </Col>
+
+     <Col xs={12} sm ={12} md={6} lg={2}>
+     <p> 
+     <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> 
+     </p> 
+     </Col>
+          </div>
      )
    })}
- 
-   </Grid>
-
-     <p> total : {totalPrice[(totalPrice.length)-1]} </p>
-     <Link to="/customerLogin"> Proceed to chekout </Link>
-     </Card>
-</div>
-
-}
-      </div>
-}
-
-
-{!this.state.stateChanged && 
-<div>
-  <h3>   cart empty
-    </h3>
-     </div>
-}
-
-
-</div>     
-</div>    
+    
+    </Row>
+    </Grid>
+    </div>         
     )
   }
 }

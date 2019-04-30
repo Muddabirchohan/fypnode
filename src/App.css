@@ -58,9 +58,13 @@ justify-content: center;
 .cardAllign{
   display: flex;
   flex-wrap: wrap;
-  padding-left: 120px;
+  padding-left: 130px;
 }
 
+.cardAllign img{
+width: 300px;
+height: 150px;
+}
 /* .icons{fvcard-style
   display: block;
   margin-left: auto;
@@ -132,6 +136,9 @@ img{
 
 }
 
+.style-slide-grid{
+display: none;
+}
 
 }
 
@@ -152,6 +159,10 @@ img{
     margin-right: auto;
     width: 50%;
   }
+  
+  .style-slide-grid{
+    display: none;
+    }
 }
 
 
@@ -201,7 +212,8 @@ img{
   }
 
   .myNavbar{
-    background-color: #202329;
+    color: 'blue';
+    background-color: #f5f5f5;
     border-bottom: 0.5px solid #FFFFFF;
     font-family: 'Staatliches', cursive;
   letter-spacing: 2px;
@@ -220,18 +232,17 @@ img{
     text-align: center;
     padding: 1em;
     text-decoration: none;
-    background-color: #202329;
-    color: #FFFFFF;
+    color: #007bff;
 }
 .myNavbar .link:hover,.myNavbar .link:active{
-    background-color:#FFFFFF;
+    /* background-color:#FFFFFF; */
     color: #5A8AB2;
 }
 .myNavbar .brand{
     width: 10em;
     text-align: center;
     padding: 10px;
-    color: #FFFFFF;
+    /* color: #5A8AB2; */
 }
 .myNavbar a{
     text-decoration: none;
@@ -373,8 +384,8 @@ img{
 footer{
   display: flex;
   justify-content: space-evenly;
-  background-color: black;
-  color: #e1e1e1 !important;
+  background-color: whitesmoke;
+  color: black !important;
 height: 250px;
 align-items: center;
 width: 100%;
@@ -393,10 +404,10 @@ footer >div{
 footer>div>a:first-child{
   font-weight: bold;
   text-decoration: none;
-  color: #e1e1e1;
+  color: #007bff;
 }
 footer>div>a{
-  color: #e1e1e1;
+  color: #000000;
 }
 .eightSection{
   /* background-color: black; */
@@ -413,13 +424,18 @@ color: #e1e1e1;
   padding-left: 0.5em;
 }
 .ninthSection{
-  background-color: black;
+  background-color: silver;
   display: flex;
   justify-content: space-evenly;
   height: 80px;
   align-items: center;
   border-top:1px dotted #ccd5d6;
-  color: #e1e1e1;
+  color: black;
+}
+
+.ninthSection div{
+
+  color: black !important;
 }
 
 .card{
@@ -481,9 +497,9 @@ text-align: center;
   font-size: 40px;
 }
 
-.btn-primary {
+/* .btn-primary {
 float: right;
-}
+} */
 
 .form-group{
   padding-left: 30px;
@@ -601,8 +617,8 @@ text-align: center;
 }
 
 .style-slide{
-  background-color: #00bfa5;
-  background-image: url('./../src/assets/backgroundfinal.png');
+  background-color: rgb(106, 165, 171);
+  background-image: url('./../src/assets/changefront.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   /* background-position-x: 1200px; */

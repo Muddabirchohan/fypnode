@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from './types';
+import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART, DIRECT_BUY} from './types';
 // import Posts from '../Components/Posts';
 import axios from 'axios';
 
@@ -38,6 +38,12 @@ export const getSingleProduct = (id) => dispatch => {
 
 }
 
+export const directBuyProduct = (product,id) => ({
+
+    type: DIRECT_BUY,
+    product: product,
+    id: id
+})
 
 export const addToCart = (product,id) =>  ({
     // console.log(product)

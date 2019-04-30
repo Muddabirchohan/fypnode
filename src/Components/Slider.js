@@ -5,20 +5,65 @@ import '../index.css';
 import foregroundimage1 from './../assets/mobileapp.png';
 import foregroundimage2 from './../assets/mapphone.png';
 import foregroundimage3 from './../assets/vrar.jpg';
-
+// import Slider from 'react-animated-slider';
+// import 'react-animated-slider/build/horizontal.css';
 
 
 export default class Slider extends Component {
   render() {
     return (
-<div className="style-slide"> 
-<Grid>
+<div> 
+{/* <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={foregroundimage1}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={foregroundimage2}
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={foregroundimage3}
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel> */}
+
+  <div className="style-slide">
+<Grid className="style-slide-grid" >
   <Row>
 
-    <Col xs={4} sm ={12} md={4} lg={6}>
+
+ <Col xs={4} sm ={12} md={12} lg={6}>
+    <img src={foregroundimage1} height="250px"/>
+<h1> S- BAY : Buy & Sell Variety Of Softwares <br/>S-BAY is a platform for buying and selling of software products </h1>
+    </Col>
+    
+
+    {/* <Col xs={4} sm ={12} md={4} lg={6}>
     <img src={foregroundimage1} height="300px"/>
 
-    </Col>
+    </Col> */}
     
 
     {/* <Col xs={4} sm ={12} md={4} lg={6}> 
@@ -29,16 +74,15 @@ export default class Slider extends Component {
     <img src={foregroundimage3} width="250"/>
     </Col>
      */}
-    </Row>
-</Grid>
 
 
-{/* <Grid>
+
+ {/* <Grid>
   <Row>
     <Col> <img src={foregroundimage1}/> </Col>
     <Col> <img src={foregroundimage2}/> </Col>
   </Row>
-  </Grid> */}
+  </Grid>  */}
 
          {/* <Carousel>
            
@@ -61,8 +105,10 @@ export default class Slider extends Component {
  
 </Carousel>
   */}
-
-      </div>
+    </Row>
+</Grid>
+</div>
+</div>
     )
   }
 }

@@ -83,6 +83,8 @@ class customerLogin extends Component {
   <button class="btn btn-primary">Login </button>
   <span>
   <Link to="/customerSighnup"> register or sighnup </Link>
+  <Link to="/forgotPasswordCustomer"> forgot </Link>
+
   </span>
 </form>
 </Card>

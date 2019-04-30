@@ -9,13 +9,11 @@ export default class CategoriesList extends Component {
     return (
       <div class="list-categories">
 
-
+<h1> Software Categories  </h1>
 
        <Grid style={{paddingBottom: '1em'}}>
   <Row className="show-grid">
-    
-  
-
+ 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="/mobileapp"> 
     <Card >

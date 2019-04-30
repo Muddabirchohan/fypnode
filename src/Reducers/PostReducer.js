@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART } from '../actions/types';
+import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART,DIRECT_BUY } from '../actions/types';
 
 const initialState = {
 
@@ -13,7 +13,8 @@ const initialState = {
     cartPrices: [],
     cartCounter: 0,
     username: '',
-    password: ''
+    password: '',
+    buy: {}
 
 };
 
@@ -65,6 +66,15 @@ export default function (state = initialState, action) {
                     cart: newCart,
                     addedIds: myids
                 }}
+
+
+                case DIRECT_BUY:
+                console.log("number ",action.product);
+                return {
+                    ...state,
+                    buy: action.product
+                }
+
         //      {
         //         var newCart = state.cart.filter(item => item !== action.object),
         //         cartCounter =  state.cartCounter-1

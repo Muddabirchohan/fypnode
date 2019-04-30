@@ -32,6 +32,7 @@ import { addToCart } from '../actions/PostActions';
         })
     }
 
+    
     addCart(obj, _id){
       let {addedIds, addToCart} = this.props;
        if(addedIds.includes(_id)){
@@ -53,7 +54,7 @@ import { addToCart } from '../actions/PostActions';
       <CardActionArea>
         <CardContent>
             <div >
-<img src={products.screenShot} alt="description" style={{display: 'block',marginLeft: 'auto',marginRight: 'auto'}}/>
+<img src={products.screenShot} alt="description" style={{height: '100%',display: 'block',marginLeft: 'auto',marginRight: 'auto'}}/>
             </div>
         </CardContent>
       </CardActionArea>
@@ -84,14 +85,14 @@ import { addToCart } from '../actions/PostActions';
         <Card >
       <CardActionArea>
         <CardContent >
-              <div className="icons">
+              {/* <div className="icons">
             <h2> Seller Profile</h2>
             <p> Seller Id : {products.seller_id}   </p> 
             <div className="centerCart"> 
             <br/><br/>
 
 </div>
-            </div>
+            </div> */}
         </CardContent>
       </CardActionArea>
       <CardActions> 
@@ -124,7 +125,7 @@ import { addToCart } from '../actions/PostActions';
   
 <Col xs={12} sm ={12} md={4} lg={4} className="productDescription">
 <Button variant="contained" color="primary"  style={{width: '100%'}} onClick={()=> this.addCart(products,products._id)}> Add To Cart <i class="fas fa-cart-plus"></i> </Button> 
-
+    <p> <Link to={`/productCustomize/${products._id}` }> customize </Link></p> 
  </Col>
  
 

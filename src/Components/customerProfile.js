@@ -28,6 +28,7 @@ import profile from '../../src/assets/profile.jpg';
 
 render(){
     const {customerProfile} = this.state;
+    console.log(this.state.customerProfile)
     return(
         <div>
             <Slider3/>
@@ -44,6 +45,11 @@ render(){
             <p> Address :   {customerProfile.address} </p> 
             <p> Email   :   {customerProfile.email} </p> 
             <p> Contact :   {customerProfile.contact} </p> 
+            <p> 
+            <h2> 
+            <Link to={`/Myrequests/${customerProfile._id}`}> my requests </Link>
+            </h2> 
+            </p>
             </div>
         </CardContent>
       </CardActionArea>
@@ -58,7 +64,9 @@ render(){
             <div className="icons">
 
             <h1> Wellcome {customerProfile.name} </h1>
-            <Link to={`/newProductRequest/${customerProfile._id}`}> request for new product </Link>
+            <h2>
+            <Link to={`/newProductRequest/${customerProfile._id}`}> Request for new product </Link>
+            </h2>
             </div>
         </CardContent>
       </CardActionArea>

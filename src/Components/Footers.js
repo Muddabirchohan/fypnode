@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import '../App.css';
-// import { Grid } from '@material-ui/core';
 import {Grid,Col,Row} from 'react-bootstrap';
-
+import watch from './../assets/img2.jpg';
+import jacket from './../assets/jacket.jpg';
+import bulb from './../assets/bulb.jpg';
+import perfume from './../assets/perfume.jpg';
+import nailpolish from './../assets/nailpolish.jpg';
+import shoe from './../assets/shoes.jpg';
 
 export default class Footers extends Component {
   render() {
     return (
-      <div>
-
+      <div className="footer-head">
+                <h1> Contact us  </h1>
 
         <footer>
                 <div>
-                
+
                     <Link to="#">technologies</Link>
                     <Link to="#">office</Link>
                     <Link to="#">tel</Link>
@@ -32,16 +36,42 @@ export default class Footers extends Component {
                     <Link to="#">as a seller</Link>
                     <Link to="#">as a developer</Link>
                     <Link to="#">as a customer</Link>
-                    <Link to="#">work</Link>
+                    <Link to="#">works</Link>
                 </div>
          </footer>
    
-          
-        
+         
+<div className="footer-bg"> 
+
+{/* <Grid>
+  <Row >
+
+    <Col xs={12} sm ={12} md={6} lg={4}>
+  
+    <span className="dot">
+       </span>
+    </Col>
+
+    <Col xs={12} sm ={12} md={6} lg={4}>
+  
+    <span className="dot">
+    </span>
+    </Col>
+
+    <Col xs={12} sm ={12} md={6} lg={4}>
+  
+    <span className="dot">
+     </span>
+  </Col>
+   
+  </Row>
+  </Grid>
+       */}
+  </div>  
         <div class="ninthSection">
-            <div>© 2019	CSRD (CENTER FOR RESEARCH & DEVELOPMENT )</div>
-            <div >Made with <span class="size"><i class="fas fa-heart"></i></span> by The CSRD</div>
-        </div>
+            <h3>©2019	CSRD (CENTER FOR SOFTWARE RESEARCH & DEVELOPMENT )</h3>
+            <h3> Made by The CSRD</h3>
+        </div> 
 
       </div>
     )

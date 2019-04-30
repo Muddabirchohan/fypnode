@@ -5,15 +5,40 @@ import cart from './../assets/cart.png';
 import {connect} from 'react-redux';
 import {Grid,Col,Row} from 'react-bootstrap';
 import { removeFromCart,addToCart } from '../actions/PostActions';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import TextField from '@material-ui/core/TextField';
+import { fetchproducts } from '../actions/PostActions';
+import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core';
+
 
  class slider3 extends Component {
-    componentDidMount(){
-            console.log("cart items",this.props.cartcounter);
-        // const one = document.querySelector('#one');
-        // one.addEventListener('click', (e)=>{
-        //     one.parentElement.classList.toggle('active');
-        // })
+
+  constructor(props){
+    super(props)
+    this.state = {
+    search: ''
     }
+  }
+    componentDidMount(){
+      this.props.fetchproducts();
+    }
+
+    // searchData(e){
+    //   this.setState({ search: e.target.value})
+    //   console.log(this.state.search);
+     
+    // }
+
+    // searchProduct(){
+    //   console.log("works")
+    //   let filteredItmes=[];
+    //   this.props.products.filter( obj =>{
+    //     if(obj.pname === this.state.search){
+    //       filteredItmes.push(obj);
+    //       console.log("filter done",filteredItmes)
+    //     }
+    //   })
+    // }
   render() {
     return (
       <div>
@@ -31,17 +56,30 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
             <img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>
         </Link>
           
-          <h1 style={{paddingTop: '15px',color: 'white',fontFamily:'fantasy'}}> S-BAY </h1>
+        <Link to="#">  <h1 style={{paddingTop: '15px',fontFamily:'fantasy'}}> S-BAY </h1>   </Link>
           
-    <div className="left" style={{paddingTop: '10px'}}>
-    <Link to="/customerLogin" className="link" > Buy  </Link>
+    {/* <div className="left" style={{paddingTop: '10px'}}>
+    <Link to="/customerLogin" className="link"  > Buy  </Link>
+    <AnchorLink href='#products' style={{paddingTop: '12px',fontSize: '20px'}}> Products  </AnchorLink> 
+     <AnchorLink href='#footers' style={{color: 'white', paddingTop: '12px',marginLeft: '20px'}}> Footer  </AnchorLink> 
+    </div> */}
 
-    </div>
+    {/* <div className="left" style={{paddingTop: '10px'}}>
+    <TextField
+          id="filled-search"
+          label="Search field"
+          type="search"
+          margin="normal"
+          variant="filled"
+          onChange={this.searchData.bind(this)}
+        />    
+        <Button onClick={this.searchProduct.bind(this)}> search </Button>
+        </div> */}
 
     <div className="right" style={{paddingTop: '10px'}}>
-        <Link to="/cart" className="link" > <img src={cart} height={30} alt="cart"/>   </Link>
-        <Link to="/sellerlogin" className="link"> SELL </Link>
-        
+        <Link to="/cart" className="link" > <img src={cart} height={45} alt="cart"/>   </Link>
+        <Link to="/sellerlogin" className="link" style={{fontSize: '15px'}}> SELL </Link>
+  
     </div>
 
 </div>
@@ -51,8 +89,9 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
 }
 
 const mapStateToProps = (state,dispatch) => ({
-    cartCounter: state.posts.cartCounter
+    cartCounter: state.posts.cartCounter,
+    products: state.posts.items,
   })
   
-  export default connect(mapStateToProps)(slider3);
+  export default connect(mapStateToProps,{ fetchproducts })(slider3);
   

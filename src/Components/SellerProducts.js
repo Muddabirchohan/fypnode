@@ -77,10 +77,9 @@ updatePro(){
         console.log("users",user)
     })  
     this.setState({editable : !this.state.editable})
+    this.props.history.goBack()
+
 }
-
-
-
 
 
 
@@ -124,6 +123,8 @@ deleteProduct(id){
   .then(res => {
       console.log("res",res)
   })
+  this.props.history.goBack()
+
 }
 
 // handleShow() {
@@ -141,24 +142,24 @@ render(){
   <Row>
 
     <Col xs={12} sm ={6} md={4} lg={12}>
-    <Card>
-      <CardActionArea>
-        <CardContent>
+  
        {sellerProducts.map((obj,index)=>{
            return(
-            <div className="icons">
-            <p>   <img src={obj.screenShot} width="80%" height="60%"/> </p> 
+            <Card className="seller-products-list">
+            <CardActionArea>
+              <CardContent>
+            <p>   <img src={obj.screenShot}/> </p> 
             <p>     {obj.pname} </p> 
             <p>     {obj.cost} </p> 
             <p>     {obj.category} </p> 
             <p> <Button onClick={this.editProduct.bind(this,obj._id,index)}> edit </Button> </p>
             <p> <Button onClick={this.deleteProduct.bind(this,obj._id)}> delete product </Button></p>
-            </div>
-           )
-       })}
-        </CardContent>
+            </CardContent>
       </CardActionArea>
     </Card>
+           )
+       })}
+     
     </Col>  
     </Row>
        }
@@ -174,19 +175,19 @@ render(){
 
         
           <div class="form-group">
-          <p>   <img src={this.state.sellerProducts[index].screenShot} width="80%" height="60%"/> </p> 
+          <p>   <img src={this.state.sellerProducts[index].screenShot} style={{display: 'block',marginLeft: 'auto',marginRight: 'auto'}}/> </p> 
 
     <label for="name">product name:</label>
-    <input type="name" class="form-control" id="name" value={sellerProducts[index].pname} onChange={this.getName.bind(this)}/>
+    <input type="name" class="form-control" id="name" value={this.state.sellerProducts[index].pname} onChange={this.getName.bind(this)}/>
   </div>
  
   <div class="form-group">
     <label for="exeUrl">exeUrl:</label>
-    <input type="text" class="form-control" id="exeUrl" value={sellerProducts[index].exeUrl} onChange={this.getExeUrl.bind(this)}/>
+    <input type="text" class="form-control" id="exeUrl" value={this.state.exeUrl} onChange={this.getExeUrl.bind(this)}/>
   </div>
   <div class="form-group">
     <label for="demovideourl">demovideourl:</label>
-    <input type="text" class="form-control" id="demovideourl" value={sellerProducts[index].demoVideoUrl} onChange={this.getDemoVideoUrl.bind(this)}/>
+    <input type="text" class="form-control" id="demovideourl" value={this.state.demoVideoUrl} onChange={this.getDemoVideoUrl.bind(this)}/>
   </div>
           </Col>
 
@@ -194,16 +195,16 @@ render(){
           <Col> 
           <div class="form-group">
     <label for="hostUrl">hostUrl:</label>
-    <input type="text" class="form-control" id="hostUrl" value={sellerProducts[index].hostUrl} onChange={this.getHostUrl.bind(this)}/>
+    <input type="text" class="form-control" id="hostUrl" value={this.state.hostUrl} onChange={this.getHostUrl.bind(this)}/>
   </div>
   <div class="form-group">
     <label for="cost">cost:</label>
-    <input type="text" class="form-control" id="cost" value={sellerProducts[index].cost} onChange={this.getCost.bind(this)}/>
+    <input type="text" class="form-control" id="cost" value={this.state.cost} onChange={this.getCost.bind(this)}/>
   </div>
 
   <div class="form-group">
     <label for="pdescription">pdescription:</label>
-    <input type="text" class="form-control" id="pdescription" value={sellerProducts[index].pdescription} onChange={this.getDescription.bind(this)}/>
+    <input type="text" class="form-control" id="pdescription" value={this.state.pdescription} onChange={this.getDescription.bind(this)}/>
   </div>
           </Col>
 
@@ -212,15 +213,17 @@ render(){
  
               <div class="form-group">
     <label for="category">category:</label> <br/>
-    <select value={sellerProducts[index].category} onChange={this.getCategory.bind(this)}> 
+    <select value={this.state.category} onChange={this.getCategory.bind(this)}> 
     <option value=""> Select a Category </option>
-        <option value="web"> web app </option>
-        <option value="mobileapp"> mobile app </option>
-        <option value="vr"> vr </option>
-        <option value="ar"> ar </option>
-        <option value="ai"> ai </option>
-        <option value="ecommerce"> ecommerce </option>
-        <option value="iot"> iot </option>
+        <option value="Web App"> web app </option>
+        <option value="Android App"> Android App </option>
+        <option value="Ios App"> Ios App </option>
+        <option value="Android/Ios App"> Android/Ios App </option>
+        <option value="VR"> VR </option>
+        <option value="AR"> AR </option>
+        <option value="AI"> AI </option>
+        <option value="Ecommerce"> Ecommerce </option>
+        <option value="IOT"> IOT </option>
         </select>
   </div>
 

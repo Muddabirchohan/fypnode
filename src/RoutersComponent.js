@@ -22,7 +22,16 @@ import requireAuth from './Components/Authentication';
 import NewProductRequest from './Components/NewProductRequest';
 import AdminPanel from './Components/AdminPanel';
 import sellerProducts from './Components/SellerProducts';
-import {ProtectedRoutes} from './Components/ProtectedRoutes';
+import { ProtectedRoute } from "./Components/ProtectedRoutes";
+import MyRequests from './Components/MyRequests';
+import Cart2 from './Components/Cart2';
+import ProductCustomize from './Components/ProdcutCustomize';
+import ForgotPassword from './Components/ForgotPassword';
+import ResetPassword from './Components/ResetPassword';
+import MaterialUiFields from './Components/MaterialUiFields'
+import DirectBuy from './Components/DirectBuy';
+import ForgotPasswordCustomer from './Components/ForgotPasswordCustomer';
+import ResetPasswordCustomer from './Components/ResetPasswordCustomer';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -42,8 +51,6 @@ export default class RoutersComponent extends Component {
         <Route path="/sellerSighnup" component={sellerSignup}/> 
         <Route path="/customerSignup" component={customerSignup}/> 
         <Route path="/customerLogin" component={customerLogin}/> 
-        {/* <Route path="/sellerProfile/:id" component={sellerProfile}/>  */}
-         {/* <Route path="/sellerProfile/:id/" component={requireAuth(sellerProfile)}/> */}
           <Route path="/sellerProfile/:id/" component={sellerProfile}/>
         <Route path="/customerProfile/:id" component={customerProfile}/> 
         <Route path="/productDescription/:myid" component={ProductDescription}/> 
@@ -53,9 +60,24 @@ export default class RoutersComponent extends Component {
         <Route path="/customerSighnup" component={CustomerRegistartion}/> 
         <Route path="/newProductRequest/:cusNewReqId" component={NewProductRequest}/> 
         <Route path="/sellerProducts/:spid" component={sellerProducts}/> 
+        <Route path="/Myrequests/:custReqid" component={MyRequests}/> 
+        <Route path="/productCustomize/:customize" component={ProductCustomize}/> 
+        <Route path="/forgotPassword" component={ForgotPassword}/> 
+         <Route path="/reset/:token" component={ResetPassword}/> 
+        <Route path="/sellerupdate/:updatedSellersId" component={ResetPassword}/>
+        <Route path="/forgotPasswordCustomer" component={ForgotPasswordCustomer}/> 
+         <Route path="/resetcustomer/:token" component={ResetPasswordCustomer}/> 
+        <Route path="/customerupdate/:updatedCustomersId" component={ResetPasswordCustomer}/>
         
+         <Route path="/texts" component={MaterialUiFields}/> 
+        <Route path="/directbuy/:buyid" component={DirectBuy}/> 
+        
+        
+
+        <ProtectedRoute exact path="/" component={App} />
+        <Route path="*" component={() => "404 NOT FOUND"} />
+
         <Route path="/admin" component={AdminPanel}/> 
-        {/* <Route path="*" component={()=> "404 not found"}/>  */}
 
         </Switch>
         </BrowserRouter>
